@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,18 @@ using System.Windows.Forms;
 
 namespace BusDepotUI
 {
-    public partial class Form1 : Form
+    public partial class Catalog<T> : Form
+        where T : class
     {
-        public Form1()
+        public Catalog(DbSet<T> set)
         {
             InitializeComponent();
+            dataGridView.DataSource = set.Local.ToBindingList();
+        }   
+
+        private void Catalog_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

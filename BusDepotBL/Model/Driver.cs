@@ -2,7 +2,7 @@
 
 namespace BusDepotBL.Model
 {
-    internal class Driver
+    public class Driver
     {
         public int DriverId { get; set; }
         public string DriverFirstName { get; set; }

@@ -2,7 +2,7 @@
 
 namespace BusDepotBL.Model
 {
-    internal class BusDepotContext : DbContext
+    public class BusDepotContext : DbContext
     {
         public BusDepotContext() : base("BusDepotConnection") { }
 

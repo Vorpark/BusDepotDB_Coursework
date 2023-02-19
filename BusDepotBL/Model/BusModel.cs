@@ -2,7 +2,7 @@
 
 namespace BusDepotBL.Model
 {
-    internal class BusModel
+    public class BusModel
     {
         public int BusModelId { get; set; }
         public string BusName { get; set; }
