@@ -16,13 +16,13 @@ namespace BusDepotUI
 
         private void BusDepotTrackToolStripMenuItem_Click(object sender, EventArgs e) //TODO:Сортировка
         {
-            var catalogBusDepotTrack = new Catalog<Bus>(db.Buses); //db.Buses.Where(x => x.BusOnWay == false)
+            var catalogBusDepotTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == false).ToList());
             catalogBusDepotTrack.Show();
         }
 
         private void BusOnWayTrackToolStripMenuItem_Click(object sender, EventArgs e) //TODO:Сортировка
         {
-            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses);
+            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == true).ToList());
             catalogBusOnWayTrack.Show();
         }
     }
