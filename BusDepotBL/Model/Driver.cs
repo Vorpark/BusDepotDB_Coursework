@@ -8,10 +8,14 @@ namespace BusDepotBL.Model
         public string DriverFirstName { get; set; }
         public string DriverMiddleName { get; set; }
         public string DriverLastName { get; set; }
-        public string DriverFullName { get; set; } // Реализовать в конструкторе
+        public string DriverFullName { get; set; }
         public int DriverAge { get; set; }
         public int DriverExperience { get; set; }
         public virtual ICollection<Bus> Buses { get; set; }
+        public Driver()
+        {
+            DriverFullName = $"{DriverLastName} {DriverFirstName} {DriverMiddleName}";
+        }
         public override string ToString()
         {
             return DriverFullName;

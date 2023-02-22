@@ -81,14 +81,14 @@
             // автобусыВПToolStripMenuItem
             // 
             this.автобусыВПToolStripMenuItem.Name = "автобусыВПToolStripMenuItem";
-            this.автобусыВПToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.автобусыВПToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.автобусыВПToolStripMenuItem.Text = "Парк автобусов";
             this.автобусыВПToolStripMenuItem.Click += new System.EventHandler(this.BusInDepotTrackToolStripMenuItem_Click);
             // 
             // автобусыВПутиToolStripMenuItem
             // 
             this.автобусыВПутиToolStripMenuItem.Name = "автобусыВПутиToolStripMenuItem";
-            this.автобусыВПутиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.автобусыВПутиToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.автобусыВПутиToolStripMenuItem.Text = "Автобусы в пути";
             this.автобусыВПутиToolStripMenuItem.Click += new System.EventHandler(this.BusOnWayTrackToolStripMenuItem_Click);
             // 
@@ -125,13 +125,14 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.BusAddToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // водительToolStripMenuItem
@@ -148,6 +149,7 @@
             this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
             this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.добавитьToolStripMenuItem1.Text = "Добавить";
+            this.добавитьToolStripMenuItem1.Click += new System.EventHandler(this.DriverAddToolStripMenuItem1_Click);
             // 
             // удалитьToolStripMenuItem1
             // 
@@ -167,14 +169,14 @@
             // добавитьToolStripMenuItem2
             // 
             this.добавитьToolStripMenuItem2.Name = "добавитьToolStripMenuItem2";
-            this.добавитьToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
             this.добавитьToolStripMenuItem2.Text = "Добавить";
             this.добавитьToolStripMenuItem2.Click += new System.EventHandler(this.RouteAddToolStripMenuItem2_Click);
             // 
             // удалитьToolStripMenuItem2
             // 
             this.удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
-            this.удалитьToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
             this.удалитьToolStripMenuItem2.Text = "Удалить";
             // 
             // модельАвтобусаToolStripMenuItem
@@ -189,13 +191,14 @@
             // добавитьToolStripMenuItem3
             // 
             this.добавитьToolStripMenuItem3.Name = "добавитьToolStripMenuItem3";
-            this.добавитьToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.добавитьToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem3.Text = "Добавить";
+            this.добавитьToolStripMenuItem3.Click += new System.EventHandler(this.BusModelAddToolStripMenuItem3_Click);
             // 
             // удалитьToolStripMenuItem3
             // 
             this.удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
-            this.удалитьToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.удалитьToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.удалитьToolStripMenuItem3.Text = "Удалить";
             // 
             // автобуснаяПарковкаToolStripMenuItem
@@ -210,13 +213,14 @@
             // добавитьToolStripMenuItem4
             // 
             this.добавитьToolStripMenuItem4.Name = "добавитьToolStripMenuItem4";
-            this.добавитьToolStripMenuItem4.Size = new System.Drawing.Size(126, 22);
+            this.добавитьToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem4.Text = "Добавить";
+            this.добавитьToolStripMenuItem4.Click += new System.EventHandler(this.BusDepotAddToolStripMenuItem4_Click);
             // 
             // удалитьToolStripMenuItem4
             // 
             this.удалитьToolStripMenuItem4.Name = "удалитьToolStripMenuItem4";
-            this.удалитьToolStripMenuItem4.Size = new System.Drawing.Size(126, 22);
+            this.удалитьToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.удалитьToolStripMenuItem4.Text = "Удалить";
             // 
             // полноеОтслеживаниеToolStripMenuItem

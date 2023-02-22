@@ -66,5 +66,45 @@ namespace BusDepotUI
                 db.SaveChanges();
             }
         }
+
+        private void BusAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new BusAdd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.Buses.Add(form.Bus);
+                db.SaveChanges();
+            }
+        }
+
+        private void DriverAddToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form = new DriverAdd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.Drivers.Add(form.Driver);
+                db.SaveChanges();
+            }
+        }
+
+        private void BusModelAddToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            var form = new BusModelAdd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.BusModels.Add(form.BusModel);
+                db.SaveChanges();
+            }
+        }
+
+        private void BusDepotAddToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            var form = new BusDepotAdd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.BusDepots.Add(form.BusDepot);
+                db.SaveChanges();
+            }
+        }
     }
 }

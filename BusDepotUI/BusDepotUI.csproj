@@ -64,6 +64,30 @@
     <Compile Include="Catalog.Designer.cs">
       <DependentUpon>Catalog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editing Forms\BusAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing Forms\BusAdd.Designer.cs">
+      <DependentUpon>BusAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editing Forms\BusDepotAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing Forms\BusDepotAdd.Designer.cs">
+      <DependentUpon>BusDepotAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editing Forms\BusModelAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing Forms\BusModelAdd.Designer.cs">
+      <DependentUpon>BusModelAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editing Forms\DriverAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing Forms\DriverAdd.Designer.cs">
+      <DependentUpon>DriverAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editing Forms\RouteAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +104,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing Forms\BusAdd.resx">
+      <DependentUpon>BusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing Forms\BusDepotAdd.resx">
+      <DependentUpon>BusDepotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing Forms\BusModelAdd.resx">
+      <DependentUpon>BusModelAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing Forms\DriverAdd.resx">
+      <DependentUpon>DriverAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editing Forms\RouteAdd.resx">
       <DependentUpon>RouteAdd.cs</DependentUpon>
