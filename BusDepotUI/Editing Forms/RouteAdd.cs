@@ -11,13 +11,16 @@ namespace BusDepotUI.Editing_Forms
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, EventArgs e) //Проверка на входные
+        public RouteAdd(Route route) : this()
         {
-            Route = new Route()
-            {
-                RouteNumber = Int32.Parse(textBox.Text)
-            };
+            Route = route;
+            textBox.Text = route.RouteNumber.ToString();
+        }
+        private void button_Click(object sender, EventArgs e) //TODO: проверка
+        {
+            var route = Route ?? new Route();
+            route.RouteNumber = Int32.Parse(textBox.Text);
+            Route = route;
             Close();
         }
     }

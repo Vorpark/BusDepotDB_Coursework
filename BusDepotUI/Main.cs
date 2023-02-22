@@ -29,31 +29,31 @@ namespace BusDepotUI
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.ToList(), db);
+            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses, db);
             catalogBusOnWayTrack.Show();
         }
 
         private void DriversTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Driver>(db.Drivers.ToList(), db);
+            var catalogBusOnWayTrack = new Catalog<Driver>(db.Drivers, db);
             catalogBusOnWayTrack.Show();
         }
 
         private void RoutesTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Route>(db.Routes.ToList(), db);
+            var catalogBusOnWayTrack = new Catalog<Route>(db.Routes, db);
             catalogBusOnWayTrack.Show();
         }
 
         private void BusModelsTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<BusModel>(db.BusModels.ToList(), db);
+            var catalogBusOnWayTrack = new Catalog<BusModel>(db.BusModels, db);
             catalogBusOnWayTrack.Show();
         }
 
         private void BusDepotsTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<BusDepot>(db.BusDepots.ToList(), db);
+            var catalogBusOnWayTrack = new Catalog<BusDepot>(db.BusDepots, db);
             catalogBusOnWayTrack.Show();
         }
 

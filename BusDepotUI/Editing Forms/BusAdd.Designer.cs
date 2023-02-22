@@ -70,6 +70,7 @@
             this.Controls.Add(this.labelName);
             this.Name = "BusAdd";
             this.Text = "BusAdd";
+            this.Load += new System.EventHandler(this.BusAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

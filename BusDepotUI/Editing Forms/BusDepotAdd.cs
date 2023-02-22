@@ -11,13 +11,16 @@ namespace BusDepotUI.Editing_Forms
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, EventArgs e)
+        public BusDepotAdd(BusDepot busDepot) : this()
         {
-            BusDepot = new BusDepot()
-            {
-                BusDepotAddress = textBox1.Text
-            };
+            BusDepot = busDepot;
+            textBox1.Text = busDepot.BusDepotAddress;
+        }
+        private void button_Click(object sender, EventArgs e) //TODO: проверка
+        {
+            var busDepot = BusDepot ?? new BusDepot();
+            busDepot.BusDepotAddress = textBox1.Text;
+            BusDepot = busDepot;
             Close();
         }
     }
