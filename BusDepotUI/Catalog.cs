@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusDepotBL.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -7,13 +8,20 @@ namespace BusDepotUI
     public partial class Catalog<T> : Form
         where T : class
     {
-        public Catalog(List<T> set)
+        BusDepotContext db;
+        public Catalog(List<T> set, BusDepotContext db)
         {
             InitializeComponent();
+            this.db = db;
             dataGridView.DataSource = set;
         }
 
-        private void Catalog_Load(object sender, EventArgs e)
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
 
         }

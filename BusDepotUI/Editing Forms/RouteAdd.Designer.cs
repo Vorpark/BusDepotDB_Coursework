@@ -78,7 +78,6 @@
             this.Controls.Add(this.button);
             this.Name = "RouteAdd";
             this.Text = "RouteAdd";
-            this.Load += new System.EventHandler(this.RouteAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

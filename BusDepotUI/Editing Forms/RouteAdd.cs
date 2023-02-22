@@ -12,11 +12,6 @@ namespace BusDepotUI.Editing_Forms
             InitializeComponent();
         }
 
-        private void RouteAdd_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Click(object sender, EventArgs e) //Проверка на входные
         {
             Route = new Route()

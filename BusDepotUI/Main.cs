@@ -17,43 +17,43 @@ namespace BusDepotUI
 
         private void BusInDepotTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusDepotTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == false).ToList());
+            var catalogBusDepotTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == false).ToList(), db);
             catalogBusDepotTrack.Show();
         }
 
         private void BusOnWayTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == true).ToList());
+            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.Where(x => x.BusOnWay == true).ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.ToList());
+            var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses.ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
         private void DriversTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Driver>(db.Drivers.ToList());
+            var catalogBusOnWayTrack = new Catalog<Driver>(db.Drivers.ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
         private void RoutesTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<Route>(db.Routes.ToList());
+            var catalogBusOnWayTrack = new Catalog<Route>(db.Routes.ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
         private void BusModelsTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<BusModel>(db.BusModels.ToList());
+            var catalogBusOnWayTrack = new Catalog<BusModel>(db.BusModels.ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
         private void BusDepotsTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new Catalog<BusDepot>(db.BusDepots.ToList());
+            var catalogBusOnWayTrack = new Catalog<BusDepot>(db.BusDepots.ToList(), db);
             catalogBusOnWayTrack.Show();
         }
 
