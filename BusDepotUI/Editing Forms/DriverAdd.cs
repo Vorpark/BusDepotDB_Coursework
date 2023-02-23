@@ -26,6 +26,7 @@ namespace BusDepotUI.Editing_Forms
             driver.DriverFirstName = textBox1.Text;
             driver.DriverLastName = textBox2.Text;
             driver.DriverMiddleName = textBox3.Text;
+            driver.DriverFullName = $"{driver.DriverLastName} {driver.DriverFirstName} {driver.DriverMiddleName}";
             driver.DriverAge = Int32.Parse(textBox4.Text);
             driver.DriverExperience = Int32.Parse(textBox5.Text);
             Driver = driver;
