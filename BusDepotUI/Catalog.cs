@@ -129,5 +129,55 @@ namespace BusDepotUI
                 db.SaveChanges();
             }
         }
+
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            if (typeof(T) == typeof(Bus))
+            {
+                var form = new BusAdd();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.Buses.Add(form.Bus);
+                    db.SaveChanges();
+                }
+            }
+            else if (typeof(T) == typeof(Driver))
+            {
+                var form = new DriverAdd();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.Drivers.Add(form.Driver);
+                    db.SaveChanges();
+                }
+            }
+            else if (typeof(T) == typeof(BusDepot))
+            {
+                var form = new BusDepotAdd();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.BusDepots.Add(form.BusDepot);
+                    db.SaveChanges();
+                }
+
+            }
+            else if (typeof(T) == typeof(Route))
+            {
+                var form = new RouteAdd();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.Routes.Add(form.Route);
+                    db.SaveChanges();
+                }
+            }
+            else if (typeof(T) == typeof(BusModel))
+            {
+                var form = new BusModelAdd();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    db.BusModels.Add(form.BusModel);
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }

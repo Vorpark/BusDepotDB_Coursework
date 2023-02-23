@@ -31,6 +31,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,12 +47,12 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(776, 427);
+            this.dataGridView.Size = new System.Drawing.Size(825, 427);
             this.dataGridView.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 445);
+            this.button1.Location = new System.Drawing.Point(290, 445);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(272, 52);
             this.button1.TabIndex = 1;
@@ -61,7 +62,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(516, 445);
+            this.button2.Location = new System.Drawing.Point(568, 445);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(272, 52);
             this.button2.TabIndex = 2;
@@ -69,11 +70,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(12, 445);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(272, 52);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
             // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 509);
+            this.ClientSize = new System.Drawing.Size(849, 509);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Add;
     }
 }
