@@ -16,7 +16,7 @@ namespace BusDepotUI.Editing_Forms
             Route = route;
             textBox.Text = route.RouteNumber.ToString();
         }
-        private void button_Click(object sender, EventArgs e) //TODO: проверка
+        private void Button_Click(object sender, EventArgs e) //TODO: проверка
         {
             var route = Route ?? new Route();
             route.RouteNumber = Int32.Parse(textBox.Text);

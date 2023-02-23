@@ -57,7 +57,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Изменить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.button1.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // button2
             // 
@@ -67,7 +67,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonDelete_Click);
+            this.button2.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // Catalog
             // 

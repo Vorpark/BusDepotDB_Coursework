@@ -44,7 +44,7 @@
             this.button.TabIndex = 0;
             this.button.Text = "OK";
             this.button.UseVisualStyleBackColor = true;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.button.Click += new System.EventHandler(this.Button_Click);
             // 
             // textBox
             // 
