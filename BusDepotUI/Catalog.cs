@@ -35,7 +35,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is Bus bus)
                 {
-                    var form = new BusAdd(bus);
+                    var form = new BusAdd(bus, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -134,7 +134,7 @@ namespace BusDepotUI
         {
             if (typeof(T) == typeof(Bus))
             {
-                var form = new BusAdd();
+                var form = new BusAdd(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Buses.Add(form.Bus);
