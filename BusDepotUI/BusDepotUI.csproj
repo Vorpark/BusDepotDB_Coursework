@@ -76,6 +76,12 @@
     <Compile Include="Editing Forms\BusDepotAdd.Designer.cs">
       <DependentUpon>BusDepotAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editing Forms\BusEditTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editing Forms\BusEditTrack.Designer.cs">
+      <DependentUpon>BusEditTrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editing Forms\BusModelAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrippedDownCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrippedDownCatalog.Designer.cs">
+      <DependentUpon>StrippedDownCatalog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editing Forms\BusDepotAdd.resx">
       <DependentUpon>BusDepotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editing Forms\BusEditTrack.resx">
+      <DependentUpon>BusEditTrack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editing Forms\BusModelAdd.resx">
       <DependentUpon>BusModelAdd.cs</DependentUpon>
@@ -132,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StrippedDownCatalog.resx">
+      <DependentUpon>StrippedDownCatalog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
