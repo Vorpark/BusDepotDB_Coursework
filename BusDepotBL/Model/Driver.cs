@@ -14,6 +14,7 @@ namespace BusDepotBL.Model
         public virtual ICollection<Bus> Buses { get; set; }
         public Driver()
         {
+            Buses = new List<Bus>();
             DriverFullName = $"{DriverLastName} {DriverFirstName} {DriverMiddleName}";
         }
         public override string ToString()

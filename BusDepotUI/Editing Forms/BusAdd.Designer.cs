@@ -37,6 +37,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelName
@@ -51,7 +53,7 @@
             // button
             // 
             this.button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button.Location = new System.Drawing.Point(283, 184);
+            this.button.Location = new System.Drawing.Point(353, 343);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
             this.button.TabIndex = 1;
@@ -117,11 +119,30 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Маршрут парковки:";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(123, 117);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(363, 214);
+            this.checkedListBox1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Водители:";
+            // 
             // BusAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 236);
+            this.ClientSize = new System.Drawing.Size(494, 395);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -150,5 +171,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

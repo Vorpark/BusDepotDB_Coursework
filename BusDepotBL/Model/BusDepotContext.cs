@@ -5,7 +5,6 @@ namespace BusDepotBL.Model
     public class BusDepotContext : DbContext
     {
         public BusDepotContext() : base("BusDepotConnection") { }
-
         public DbSet<BusDepot> BusDepots { get; set;}
         public DbSet<Driver> Drivers { get; set;}
         public DbSet<BusModel> BusModels { get; set;}

@@ -11,6 +11,10 @@ namespace BusDepotBL.Model
         public virtual BusDepot BusDepot { get; set; }
         public virtual Route Route { get; set; }
         public virtual ICollection<Driver> Drivers { get; set; }
+        public Bus ()
+        {
+            Drivers = new List<Driver> ();
+        }
         public override string ToString()
         {
             return BusNumber;
