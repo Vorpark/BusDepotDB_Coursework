@@ -57,15 +57,26 @@ namespace BusDepotUI.Editing_Forms
         {
             var bus = Bus ?? new Bus();
             bus.BusNumber = textBox1.Text;
-            bus.BusModel = db.BusModels.FirstOrDefault(x => x.BusName == comboBox1.Text);
-            bus.BusDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotAddress == comboBox2.Text);
-            bus.Route = db.Routes.FirstOrDefault(x => x.RouteNumber.ToString() == comboBox3.Text);
+            //TODO: Remove
+            var busModel = db.BusModels.FirstOrDefault(x => x.BusName == comboBox1.Text);
+            bus.BusModel = busModel;
+            busModel.Buses.Add(bus);
+            //TODO: Remove
+            var busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotAddress == comboBox2.Text);
+            bus.BusDepot = busDepot;
+            busDepot.Buses.Add(bus);
+            //TODO: Remove
+            var route = db.Routes.FirstOrDefault(x => x.RouteNumber.ToString() == comboBox3.Text);
+            bus.Route = route;
+            route.Buses.Add(bus);
             bus.Drivers.Clear();
             foreach (var item in checkedListBox1.CheckedItems)
             {
                 string fullName = item.ToString();
-                bus.Drivers.Add(db.Drivers.First(x => x.DriverFullName == fullName));
-                db.Drivers.First(x => x.DriverFullName == fullName).Buses.Add(bus);
+                var drivers = db.Drivers.First(x => x.DriverFullName == fullName);
+                bus.Drivers.Add(drivers);
+                //TODO: Remove
+                drivers.Buses.Add(bus);
             }
             Bus = bus;
             Close();

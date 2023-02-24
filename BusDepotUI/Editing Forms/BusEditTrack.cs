@@ -14,6 +14,7 @@ namespace BusDepotUI.Editing_Forms
         public BusEditTrack(Bus bus) : this()
         {
             Bus = bus;
+            label1.Text = $"Номер автобуса: {bus.BusNumber}";
             checkBox1.Checked = Bus.BusOnWay;
         }
         private void button_Click(object sender, EventArgs e)
