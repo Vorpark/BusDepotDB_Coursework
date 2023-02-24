@@ -51,31 +51,39 @@ namespace BusDepotUI.Editing_Forms
                     }
                 }
             }
-            
         }
         private void button_Click(object sender, EventArgs e) //TODO: проверка
         {
             var bus = Bus ?? new Bus();
             bus.BusNumber = textBox1.Text;
-            //TODO: Remove
+
             var busModel = db.BusModels.FirstOrDefault(x => x.BusName == comboBox1.Text);
+            if (busModel.Buses.Contains(bus)) { bus.BusModel.Buses.Remove(bus); } //Проверка
             bus.BusModel = busModel;
             busModel.Buses.Add(bus);
-            //TODO: Remove
+
             var busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotAddress == comboBox2.Text);
+            if (busDepot.Buses.Contains(bus)) { bus.BusDepot.Buses.Remove(bus); } //Проверка
             bus.BusDepot = busDepot;
             busDepot.Buses.Add(bus);
-            //TODO: Remove
+
             var route = db.Routes.FirstOrDefault(x => x.RouteNumber.ToString() == comboBox3.Text);
+            if (route.Buses.Contains(bus)) { bus.Route.Buses.Remove(bus); } //Проверка
             bus.Route = route;
             route.Buses.Add(bus);
+
             bus.Drivers.Clear();
+            foreach (var item in checkedListBox1.Items)
+            {
+                string fullName = item.ToString();
+                var drivers = db.Drivers.First(x => x.DriverFullName == fullName).Buses;
+                if (drivers.Contains(bus)) { drivers.Remove(bus); }
+            }
             foreach (var item in checkedListBox1.CheckedItems)
             {
                 string fullName = item.ToString();
                 var drivers = db.Drivers.First(x => x.DriverFullName == fullName);
                 bus.Drivers.Add(drivers);
-                //TODO: Remove
                 drivers.Buses.Add(bus);
             }
             Bus = bus;
