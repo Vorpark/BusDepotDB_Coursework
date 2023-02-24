@@ -52,7 +52,6 @@
             // 
             // button
             // 
-            this.button.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button.Location = new System.Drawing.Point(353, 343);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
@@ -154,7 +153,6 @@
             this.Controls.Add(this.labelName);
             this.Name = "BusAdd";
             this.Text = "BusAdd";
-            this.Load += new System.EventHandler(this.BusAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

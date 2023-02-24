@@ -55,22 +55,58 @@ namespace BusDepotUI.Editing_Forms
         private void button_Click(object sender, EventArgs e) //TODO: проверка
         {
             var bus = Bus ?? new Bus();
-            bus.BusNumber = textBox1.Text;
+            bool check = true;
+
+            var busNumber = db.Buses.FirstOrDefault(b => b.BusNumber == textBox1.Text);
+            if (busNumber == null)
+            {
+                bus.BusNumber = textBox1.Text;
+            }
+            else
+            {
+                MessageBox.Show("Данный номер автобуса уже существует", "Ошибка!", MessageBoxButtons.OK);
+                check = false;
+
+            }
 
             var busModel = db.BusModels.FirstOrDefault(x => x.BusName == comboBox1.Text);
-            if (busModel.Buses.Contains(bus)) { bus.BusModel.Buses.Remove(bus); } //Проверка
-            bus.BusModel = busModel;
-            busModel.Buses.Add(bus);
+            if (busModel != null)
+            {
+                if (busModel.Buses.Contains(bus)) { bus.BusModel.Buses.Remove(bus); }
+                bus.BusModel = busModel;
+                busModel.Buses.Add(bus);
+            }
+            else
+            {
+                MessageBox.Show("Данной модели автобуса не существует", "Ошибка!", MessageBoxButtons.OK);
+                check = false;
+            }
 
             var busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotAddress == comboBox2.Text);
-            if (busDepot.Buses.Contains(bus)) { bus.BusDepot.Buses.Remove(bus); } //Проверка
-            bus.BusDepot = busDepot;
-            busDepot.Buses.Add(bus);
+            if (busDepot != null)
+            {
+                if (busDepot.Buses.Contains(bus)) { bus.BusDepot.Buses.Remove(bus); }
+                bus.BusDepot = busDepot;
+                busDepot.Buses.Add(bus);
+            }
+            else
+            {
+                MessageBox.Show("Данной автобусной парковки не существует", "Ошибка!", MessageBoxButtons.OK);
+                check = false;
+            }
 
             var route = db.Routes.FirstOrDefault(x => x.RouteNumber.ToString() == comboBox3.Text);
-            if (route.Buses.Contains(bus)) { bus.Route.Buses.Remove(bus); } //Проверка
-            bus.Route = route;
-            route.Buses.Add(bus);
+            if (route != null)
+            {
+                if (route.Buses.Contains(bus)) { bus.Route.Buses.Remove(bus); }
+                bus.Route = route;
+                route.Buses.Add(bus);
+            }
+            else
+            {
+                MessageBox.Show("Данного маршрута не существует", "Ошибка!", MessageBoxButtons.OK);
+                check = false;
+            }
 
             bus.Drivers.Clear();
             foreach (var item in checkedListBox1.Items)
@@ -86,13 +122,13 @@ namespace BusDepotUI.Editing_Forms
                 bus.Drivers.Add(drivers);
                 drivers.Buses.Add(bus);
             }
-            Bus = bus;
-            Close();
-        }
 
-        private void BusAdd_Load(object sender, EventArgs e)
-        {
-
+            if(check == true)
+            {
+                Bus = bus;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
     }
 }
