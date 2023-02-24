@@ -9,6 +9,7 @@ namespace BusDepotUI.Editing_Forms
     {
         public Bus Bus { get; set; }
         BusDepotContext db;
+        bool editBool = false;
         public BusAdd()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace BusDepotUI.Editing_Forms
         public BusAdd(Bus bus, BusDepotContext db) : this(db)
         {
             Bus = bus;
+            editBool = true;
             textBox1.Text = bus.BusNumber;
             comboBox1.Text = bus.BusModel.BusName;
             comboBox2.Text = bus.BusDepot.BusDepotAddress;
@@ -52,21 +54,36 @@ namespace BusDepotUI.Editing_Forms
                 }
             }
         }
-        private void button_Click(object sender, EventArgs e) //TODO: проверка
+
+        private void button_Click(object sender, EventArgs e) 
         {
             var bus = Bus ?? new Bus();
             bool check = true;
 
-            var busNumber = db.Buses.FirstOrDefault(b => b.BusNumber == textBox1.Text);
-            if (busNumber == null)
+            if (textBox1.Text != "")
             {
-                bus.BusNumber = textBox1.Text;
+                var busNumber = db.Buses.FirstOrDefault(b => b.BusNumber == textBox1.Text);
+                if (busNumber == null)
+                {
+                    bus.BusNumber = textBox1.Text;
+                }
+                else
+                {
+                    if (editBool == true)
+                    {
+                        bus.BusNumber = textBox1.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Данный номер автобуса уже существует", "Ошибка!", MessageBoxButtons.OK);
+                        check = false;
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Данный номер автобуса уже существует", "Ошибка!", MessageBoxButtons.OK);
+                MessageBox.Show("Номер автобуса не может быть пустым", "Ошибка!", MessageBoxButtons.OK);
                 check = false;
-
             }
 
             var busModel = db.BusModels.FirstOrDefault(x => x.BusName == comboBox1.Text);
