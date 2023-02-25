@@ -9,7 +9,6 @@ namespace BusDepotUI.Editing_Forms
     {
         public Route Route { get; set; }
         BusDepotContext db;
-        bool editBool = false;
 
         public RouteAdd()
         {
@@ -24,7 +23,6 @@ namespace BusDepotUI.Editing_Forms
         public RouteAdd(Route route, BusDepotContext db) : this(db)
         {
             Route = route;
-            editBool = true;
             textBox.Text = route.RouteNumber.ToString();
         }
 
@@ -43,15 +41,8 @@ namespace BusDepotUI.Editing_Forms
                 }
                 else
                 {
-                    if (editBool == true)
-                    {
-                        route.RouteNumber = number;
-                    }
-                    else
-                    {
                         MessageBox.Show("Данный маршрут уже зарегистрирован", "Ошибка!", MessageBoxButtons.OK);
                         check = false;
-                    }
                 }
             }
             else

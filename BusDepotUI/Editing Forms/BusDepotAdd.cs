@@ -9,7 +9,6 @@ namespace BusDepotUI.Editing_Forms
     {
         public BusDepot BusDepot { get; set; }
         BusDepotContext db;
-        bool editBool = false;
         public BusDepotAdd()
         {
             InitializeComponent();
@@ -21,7 +20,6 @@ namespace BusDepotUI.Editing_Forms
         public BusDepotAdd(BusDepot busDepot, BusDepotContext db) : this(db)
         {
             BusDepot = busDepot;
-            editBool= true;
             textBox1.Text = busDepot.BusDepotAddress;
         }
         private void button_Click(object sender, EventArgs e) 
@@ -38,15 +36,8 @@ namespace BusDepotUI.Editing_Forms
                 }
                 else
                 {
-                    if (editBool == true)
-                    {
-                        busDepot.BusDepotAddress = textBox1.Text;
-                    }
-                    else
-                    {
                         MessageBox.Show("Данный адрес уже зарегистрирован", "Ошибка!", MessageBoxButtons.OK);
                         check = false;
-                    }
                 }
             }
             else
