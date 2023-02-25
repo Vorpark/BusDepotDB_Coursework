@@ -5,22 +5,22 @@ using System.Windows.Forms;
 
 namespace BusDepotUI.Editing_Forms
 {
-    public partial class RouteAdd : Form
+    public partial class RouteEdit : Form
     {
         public Route Route { get; set; }
         BusDepotContext db;
 
-        public RouteAdd()
+        public RouteEdit()
         {
             InitializeComponent();
         }
 
-        public RouteAdd(BusDepotContext db) : this()
+        public RouteEdit(BusDepotContext db) : this()
         {
             this.db = db;
         }
 
-        public RouteAdd(Route route, BusDepotContext db) : this(db)
+        public RouteEdit(Route route, BusDepotContext db) : this(db)
         {
             Route = route;
             textBox.Text = route.RouteNumber.ToString();

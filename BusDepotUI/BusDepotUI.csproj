@@ -70,41 +70,41 @@
     <Compile Include="CheckAdminPassword.Designer.cs">
       <DependentUpon>CheckAdminPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\BusAdd.cs">
+    <Compile Include="Editing Forms\BusEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\BusAdd.Designer.cs">
-      <DependentUpon>BusAdd.cs</DependentUpon>
+    <Compile Include="Editing Forms\BusEdit.Designer.cs">
+      <DependentUpon>BusEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\BusDepotAdd.cs">
+    <Compile Include="Editing Forms\BusDepotEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\BusDepotAdd.Designer.cs">
-      <DependentUpon>BusDepotAdd.cs</DependentUpon>
+    <Compile Include="Editing Forms\BusDepotEdit.Designer.cs">
+      <DependentUpon>BusDepotEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\BusEditTrack.cs">
+    <Compile Include="Editing Forms\BusTrackEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\BusEditTrack.Designer.cs">
-      <DependentUpon>BusEditTrack.cs</DependentUpon>
+    <Compile Include="Editing Forms\BusTrackEdit.Designer.cs">
+      <DependentUpon>BusTrackEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\BusModelAdd.cs">
+    <Compile Include="Editing Forms\BusModelEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\BusModelAdd.Designer.cs">
-      <DependentUpon>BusModelAdd.cs</DependentUpon>
+    <Compile Include="Editing Forms\BusModelEdit.Designer.cs">
+      <DependentUpon>BusModelEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\DriverAdd.cs">
+    <Compile Include="Editing Forms\DriverEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\DriverAdd.Designer.cs">
-      <DependentUpon>DriverAdd.cs</DependentUpon>
+    <Compile Include="Editing Forms\DriverEdit.Designer.cs">
+      <DependentUpon>DriverEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editing Forms\RouteAdd.cs">
+    <Compile Include="Editing Forms\RouteEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editing Forms\RouteAdd.Designer.cs">
-      <DependentUpon>RouteAdd.cs</DependentUpon>
+    <Compile Include="Editing Forms\RouteEdit.Designer.cs">
+      <DependentUpon>RouteEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -126,23 +126,23 @@
     <EmbeddedResource Include="CheckAdminPassword.resx">
       <DependentUpon>CheckAdminPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\BusAdd.resx">
-      <DependentUpon>BusAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\BusEdit.resx">
+      <DependentUpon>BusEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\BusDepotAdd.resx">
-      <DependentUpon>BusDepotAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\BusDepotEdit.resx">
+      <DependentUpon>BusDepotEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\BusEditTrack.resx">
-      <DependentUpon>BusEditTrack.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\BusTrackEdit.resx">
+      <DependentUpon>BusTrackEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\BusModelAdd.resx">
-      <DependentUpon>BusModelAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\BusModelEdit.resx">
+      <DependentUpon>BusModelEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\DriverAdd.resx">
-      <DependentUpon>DriverAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\DriverEdit.resx">
+      <DependentUpon>DriverEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editing Forms\RouteAdd.resx">
-      <DependentUpon>RouteAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Editing Forms\RouteEdit.resx">
+      <DependentUpon>RouteEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

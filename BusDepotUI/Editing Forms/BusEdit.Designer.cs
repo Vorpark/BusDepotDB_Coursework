@@ -1,6 +1,6 @@
 ﻿namespace BusDepotUI.Editing_Forms
 {
-    partial class BusAdd
+    partial class BusEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -135,7 +135,7 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Водители:";
             // 
-            // BusAdd
+            // BusEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,8 +151,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button);
             this.Controls.Add(this.labelName);
-            this.Name = "BusAdd";
-            this.Text = "BusAdd";
+            this.Name = "BusEdit";
+            this.Text = "BusEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

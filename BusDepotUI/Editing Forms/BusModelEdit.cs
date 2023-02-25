@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace BusDepotUI.Editing_Forms
 {
-    public partial class BusModelAdd : Form
+    public partial class BusModelEdit : Form
     {
         public BusModel BusModel { get; set; }
         BusDepotContext db;
-        public BusModelAdd()
+        public BusModelEdit()
         {
             InitializeComponent();
         }
-        public BusModelAdd(BusDepotContext db) : this()
+        public BusModelEdit(BusDepotContext db) : this()
         {
             this.db = db;
         }
-        public BusModelAdd(BusModel busModel, BusDepotContext db) : this(db)
+        public BusModelEdit(BusModel busModel, BusDepotContext db) : this(db)
         {
             BusModel= busModel;
             textBox1.Text = busModel.BusName;

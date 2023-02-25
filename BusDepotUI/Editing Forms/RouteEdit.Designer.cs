@@ -1,6 +1,6 @@
 ﻿namespace BusDepotUI.Editing_Forms
 {
-    partial class RouteAdd
+    partial class RouteEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Имя маршрута:";
             // 
-            // RouteAdd
+            // RouteEdit
             // 
             this.AcceptButton = this.button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,8 +75,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.button);
-            this.Name = "RouteAdd";
-            this.Text = "RouteAdd";
+            this.Name = "RouteEdit";
+            this.Text = "RouteEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

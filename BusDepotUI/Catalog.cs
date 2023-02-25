@@ -2,8 +2,10 @@
 using BusDepotUI.Editing_Forms;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BusDepotUI
@@ -21,16 +23,16 @@ namespace BusDepotUI
         }
         public Catalog(DbSet<T> set, BusDepotContext db)
         {
-                InitializeComponent();
-                this.db = db;
-                this.set = set;
-                set.Load();
-                dataGridView.DataSource = set.Local.ToBindingList();
+            InitializeComponent();
+            this.db = db;
+            this.set = set;  
+            dataGridView.DataSource = set.Local.ToBindingList();
 
-                //TODO: Реализация нового столбца с ICollection определенного класса
-                dataGridView.AutoGenerateColumns = false;
-                dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
+            //TODO: Реализация нового столбца с ICollection определенного класса
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
         }
+        
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             var id = dataGridView.SelectedRows[0].Cells[0].Value;
@@ -39,7 +41,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is Bus bus)
                 {
-                    var form = new BusAdd(bus, db);
+                    var form = new BusEdit(bus, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -50,7 +52,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is Driver driver)
                 {
-                    var form = new DriverAdd(driver, db);
+                    var form = new DriverEdit(driver, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -61,7 +63,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is BusDepot busDepot)
                 {
-                    var form = new BusDepotAdd(busDepot, db);
+                    var form = new BusDepotEdit(busDepot, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -72,7 +74,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is Route route)
                 {
-                    var form = new RouteAdd(route, db);
+                    var form = new RouteEdit(route, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -83,7 +85,7 @@ namespace BusDepotUI
             {
                 if (set.Find(id) is BusModel busModel)
                 {
-                    var form = new BusModelAdd(busModel, db);
+                    var form = new BusModelEdit(busModel, db);
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         db.SaveChanges();
@@ -138,7 +140,7 @@ namespace BusDepotUI
         {
             if (typeof(T) == typeof(Bus))
             {
-                var form = new BusAdd(db);
+                var form = new BusEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Buses.Add(form.Bus);
@@ -147,7 +149,7 @@ namespace BusDepotUI
             }
             else if (typeof(T) == typeof(Driver))
             {
-                var form = new DriverAdd(db);
+                var form = new DriverEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Drivers.Add(form.Driver);
@@ -156,7 +158,7 @@ namespace BusDepotUI
             }
             else if (typeof(T) == typeof(BusDepot))
             {
-                var form = new BusDepotAdd(db);
+                var form = new BusDepotEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusDepots.Add(form.BusDepot);
@@ -166,7 +168,7 @@ namespace BusDepotUI
             }
             else if (typeof(T) == typeof(Route))
             {
-                var form = new RouteAdd(db);
+                var form = new RouteEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Routes.Add(form.Route);
@@ -175,7 +177,7 @@ namespace BusDepotUI
             }
             else if (typeof(T) == typeof(BusModel))
             {
-                var form = new BusModelAdd(db);
+                var form = new BusModelEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusModels.Add(form.BusModel);

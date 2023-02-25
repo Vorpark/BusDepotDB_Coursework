@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace BusDepotUI.Editing_Forms
 {
-    public partial class DriverAdd : Form
+    public partial class DriverEdit : Form
     {
         public Driver Driver { get; set; }
         BusDepotContext db;
-        public DriverAdd()
+        public DriverEdit()
         {
             InitializeComponent();
         }
-        public DriverAdd(BusDepotContext db) : this()
+        public DriverEdit(BusDepotContext db) : this()
         {
             this.db = db;
         }
-        public DriverAdd(Driver driver, BusDepotContext db) : this(db)
+        public DriverEdit(Driver driver, BusDepotContext db) : this(db)
         {
             Driver = driver;
             textBox1.Text = driver.DriverFirstName;

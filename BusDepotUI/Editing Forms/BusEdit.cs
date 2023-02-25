@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace BusDepotUI.Editing_Forms
 {
-    public partial class BusAdd : Form
+    public partial class BusEdit : Form
     {
         public Bus Bus { get; set; }
         BusDepotContext db;
         bool editBool = false;
-        public BusAdd()
+        public BusEdit()
         {
             InitializeComponent();
         }
-        public BusAdd(BusDepotContext db) : this()
+        public BusEdit(BusDepotContext db) : this()
         {
             this.db = db;
             foreach (var item in db.BusModels)
@@ -34,7 +34,7 @@ namespace BusDepotUI.Editing_Forms
                 checkedListBox1.Items.Add(item);
             }
         }
-        public BusAdd(Bus bus, BusDepotContext db) : this(db)
+        public BusEdit(Bus bus, BusDepotContext db) : this(db)
         {
             Bus = bus;
             editBool = true;

@@ -1,6 +1,6 @@
 ﻿namespace BusDepotUI.Editing_Forms
 {
-    partial class DriverAdd
+    partial class DriverEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -131,7 +131,7 @@
             this.textBox5.Size = new System.Drawing.Size(271, 20);
             this.textBox5.TabIndex = 11;
             // 
-            // DriverAdd
+            // DriverEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,8 +147,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
-            this.Name = "DriverAdd";
-            this.Text = "DriverAdd";
+            this.Name = "DriverEdit";
+            this.Text = "DriverEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

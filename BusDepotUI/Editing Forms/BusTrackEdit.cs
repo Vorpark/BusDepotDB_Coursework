@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace BusDepotUI.Editing_Forms
 {
-    public partial class BusEditTrack : Form
+    public partial class BusTrackEdit : Form
     {
         public Bus Bus { get; set; }
-        public BusEditTrack()
+        public BusTrackEdit()
         {
             InitializeComponent();
         }
-        public BusEditTrack(Bus bus) : this()
+        public BusTrackEdit(Bus bus) : this()
         {
             Bus = bus;
             label1.Text = $"Номер автобуса: {bus.BusNumber}";

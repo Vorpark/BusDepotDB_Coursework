@@ -17,7 +17,6 @@ namespace BusDepotUI
             InitializeComponent();
             this.db = db;
             this.set = set;
-            set.Load();
             dataGridView.DataSource = set.Local.ToBindingList();
 
             dataGridView.AutoGenerateColumns = false;
@@ -30,7 +29,7 @@ namespace BusDepotUI
 
             if (set.Find(id) is Bus bus)
             {
-                var form = new BusEditTrack(bus);
+                var form = new BusTrackEdit(bus);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.SaveChanges();
