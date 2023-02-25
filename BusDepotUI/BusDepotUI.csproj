@@ -64,6 +64,12 @@
     <Compile Include="Catalog.Designer.cs">
       <DependentUpon>Catalog.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckAdminPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckAdminPassword.Designer.cs">
+      <DependentUpon>CheckAdminPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editing Forms\BusAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckAdminPassword.resx">
+      <DependentUpon>CheckAdminPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editing Forms\BusAdd.resx">
       <DependentUpon>BusAdd.cs</DependentUpon>

@@ -21,15 +21,15 @@ namespace BusDepotUI
         }
         public Catalog(DbSet<T> set, BusDepotContext db)
         {
-            InitializeComponent();
-            this.db = db;
-            this.set = set;
-            set.Load();
-            dataGridView.DataSource = set.Local.ToBindingList();
+                InitializeComponent();
+                this.db = db;
+                this.set = set;
+                set.Load();
+                dataGridView.DataSource = set.Local.ToBindingList();
 
-            //TODO: Реализация нового столбца с ICollection определенного класса
-            dataGridView.AutoGenerateColumns = false;
-            dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
+                //TODO: Реализация нового столбца с ICollection определенного класса
+                dataGridView.AutoGenerateColumns = false;
+                dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
         }
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
