@@ -152,6 +152,7 @@
             this.Controls.Add(this.button);
             this.Controls.Add(this.labelName);
             this.Name = "BusEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -94,6 +94,7 @@
             this.Controls.Add(this.dataGridView);
             this.MinimumSize = new System.Drawing.Size(865, 548);
             this.Name = "Catalog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalog";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

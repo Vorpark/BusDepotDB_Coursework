@@ -76,6 +76,7 @@
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.button);
             this.Name = "RouteEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RouteEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

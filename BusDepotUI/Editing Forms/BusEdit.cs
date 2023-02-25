@@ -125,23 +125,23 @@ namespace BusDepotUI.Editing_Forms
                 check = false;
             }
 
-            bus.Drivers.Clear();
-            foreach (var item in checkedListBox1.Items)
-            {
-                string fullName = item.ToString();
-                var drivers = db.Drivers.First(x => x.DriverFullName == fullName).Buses;
-                if (drivers.Contains(bus)) { drivers.Remove(bus); }
-            }
-            foreach (var item in checkedListBox1.CheckedItems)
-            {
-                string fullName = item.ToString();
-                var drivers = db.Drivers.First(x => x.DriverFullName == fullName);
-                bus.Drivers.Add(drivers);
-                drivers.Buses.Add(bus);
-            }
-
             if(check == true)
             {
+                bus.Drivers.Clear();
+                foreach (var item in checkedListBox1.Items)
+                {
+                    string fullName = item.ToString();
+                    var drivers = db.Drivers.First(x => x.DriverFullName == fullName).Buses;
+                    if (drivers.Contains(bus)) { drivers.Remove(bus); }
+                }
+                foreach (var item in checkedListBox1.CheckedItems)
+                {
+                    string fullName = item.ToString();
+                    var drivers = db.Drivers.First(x => x.DriverFullName == fullName);
+                    bus.Drivers.Add(drivers);
+                    drivers.Buses.Add(bus);
+                }
+
                 Bus = bus;
                 DialogResult = DialogResult.OK;
                 Close();

@@ -72,7 +72,7 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "В пути (Да/Нет):";
             // 
-            // BusEditTrack
+            // BusTrackEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,6 +82,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
             this.Name = "BusTrackEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusTrackEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

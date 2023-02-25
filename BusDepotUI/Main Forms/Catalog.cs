@@ -2,10 +2,8 @@
 using BusDepotUI.Editing_Forms;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BusDepotUI
@@ -25,7 +23,8 @@ namespace BusDepotUI
         {
             InitializeComponent();
             this.db = db;
-            this.set = set;  
+            this.set = set;
+            set.Load();
             dataGridView.DataSource = set.Local.ToBindingList();
 
             //TODO: Реализация нового столбца с ICollection определенного класса

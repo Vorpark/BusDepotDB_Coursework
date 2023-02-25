@@ -69,6 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "CheckAdminPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckAdminPassword";
             this.ResumeLayout(false);
             this.PerformLayout();

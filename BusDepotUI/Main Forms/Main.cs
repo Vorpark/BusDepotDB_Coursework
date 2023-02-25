@@ -20,16 +20,20 @@ namespace BusDepotUI
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogBusOnWayTrack = new StrippedDownCatalog<Bus>(db.Buses, db);
-            catalogBusOnWayTrack.Show();
+            Hide();
+            var strippedDownCatalogBusesTrack = new StrippedDownCatalog<Bus>(db.Buses, db);
+            strippedDownCatalogBusesTrack.ShowDialog();
+            Show();
         }
 
         private void BusesEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (access == true || CheckPassword() == true)
             {
-                var catalogBusOnWayTrack = new Catalog<Bus>(db.Buses, db);
-                catalogBusOnWayTrack.Show();
+                Hide();
+                var catalogBusesEdit = new Catalog<Bus>(db.Buses, db);
+                catalogBusesEdit.ShowDialog();
+                Show();
             }
         }
 
@@ -37,8 +41,10 @@ namespace BusDepotUI
         {
             if (access == true || CheckPassword() == true)
             {
-                var catalogBusOnWayTrack = new Catalog<Driver>(db.Drivers, db);
-                catalogBusOnWayTrack.Show();
+                Hide();
+                var catalogDriversEdit = new Catalog<Driver>(db.Drivers, db);
+                catalogDriversEdit.ShowDialog();
+                Show();
             }
         }
 
@@ -46,8 +52,10 @@ namespace BusDepotUI
         {
             if (access == true || CheckPassword() == true)
             {
-                var catalogBusOnWayTrack = new Catalog<Route>(db.Routes, db);
-                catalogBusOnWayTrack.Show();
+                Hide();
+                var catalogRoutesEdit = new Catalog<Route>(db.Routes, db);
+                catalogRoutesEdit.ShowDialog();
+                Show();
             }
         }
 
@@ -55,8 +63,10 @@ namespace BusDepotUI
         {
             if (access == true || CheckPassword() == true)
             {
-                var catalogBusOnWayTrack = new Catalog<BusModel>(db.BusModels, db);
-                catalogBusOnWayTrack.Show();
+                Hide();
+                var catalogBusModelsEdit = new Catalog<BusModel>(db.BusModels, db);
+                catalogBusModelsEdit.ShowDialog();
+                Show();
             }
         }
 
@@ -64,8 +74,10 @@ namespace BusDepotUI
         {
             if (access == true || CheckPassword() == true)
             {
-                var catalogBusOnWayTrack = new Catalog<BusDepot>(db.BusDepots, db);
-                catalogBusOnWayTrack.Show();
+                Hide();
+                var catalogBusDepotsEdit = new Catalog<BusDepot>(db.BusDepots, db);
+                catalogBusDepotsEdit.ShowDialog();
+                Show();
             }
         }
         private bool CheckPassword()

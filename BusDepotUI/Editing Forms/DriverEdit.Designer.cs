@@ -148,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
             this.Name = "DriverEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DriverEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

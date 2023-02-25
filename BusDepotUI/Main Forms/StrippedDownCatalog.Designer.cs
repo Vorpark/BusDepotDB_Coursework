@@ -67,6 +67,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView);
             this.Name = "StrippedDownCatalog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StrippedDownCatalog";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
