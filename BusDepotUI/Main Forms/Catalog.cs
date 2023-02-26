@@ -80,43 +80,46 @@ namespace BusDepotUI
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            var id = dataGridView.SelectedRows[0].Cells[0].Value;
+            DialogResult result = MessageBox.Show("Вы точно хотите удалить данный объект?", "Внимание!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var id = dataGridView.SelectedRows[0].Cells[0].Value;
+                if (typeof(T) == typeof(Bus))
+                {
+                    Bus bus = db.Buses.FirstOrDefault(x => x.BusId == (int)id);
+                    db.Buses.Attach(bus);
+                    db.Buses.Remove(bus);
+                    db.SaveChanges();
+                }
+                else if (typeof(T) == typeof(Driver))
+                {
+                    Driver driver = db.Drivers.FirstOrDefault(x => x.DriverId == (int)id);
+                    db.Drivers.Attach(driver);
+                    db.Drivers.Remove(driver);
+                    db.SaveChanges();
+                }
+                else if (typeof(T) == typeof(BusDepot))
+                {
+                    BusDepot busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotId == (int)id);
+                    db.BusDepots.Attach(busDepot);
+                    db.BusDepots.Remove(busDepot);
+                    db.SaveChanges();
 
-            if (typeof(T) == typeof(Bus))
-            {
-                Bus bus = db.Buses.FirstOrDefault(x => x.BusId == (int)id);
-                db.Buses.Attach(bus);
-                db.Buses.Remove(bus);
-                db.SaveChanges();
-            }
-            else if (typeof(T) == typeof(Driver))
-            {
-                Driver driver = db.Drivers.FirstOrDefault(x => x.DriverId == (int)id);
-                db.Drivers.Attach(driver);
-                db.Drivers.Remove(driver);
-                db.SaveChanges();
-            }
-            else if (typeof(T) == typeof(BusDepot))
-            {
-                BusDepot busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotId == (int)id);
-                db.BusDepots.Attach(busDepot);
-                db.BusDepots.Remove(busDepot);
-                db.SaveChanges();
-
-            }
-            else if (typeof(T) == typeof(Route))
-            {
-                Route route = db.Routes.FirstOrDefault(x => x.RouteId == (int)id);
-                db.Routes.Attach(route);
-                db.Routes.Remove(route);
-                db.SaveChanges();
-            }
-            else if (typeof(T) == typeof(BusModel))
-            {
-                BusModel busModel = db.BusModels.FirstOrDefault(x => x.BusModelId == (int)id);
-                db.BusModels.Attach(busModel);
-                db.BusModels.Remove(busModel);
-                db.SaveChanges();
+                }
+                else if (typeof(T) == typeof(Route))
+                {
+                    Route route = db.Routes.FirstOrDefault(x => x.RouteId == (int)id);
+                    db.Routes.Attach(route);
+                    db.Routes.Remove(route);
+                    db.SaveChanges();
+                }
+                else if (typeof(T) == typeof(BusModel))
+                {
+                    BusModel busModel = db.BusModels.FirstOrDefault(x => x.BusModelId == (int)id);
+                    db.BusModels.Attach(busModel);
+                    db.BusModels.Remove(busModel);
+                    db.SaveChanges();
+                }
             }
         }
 
