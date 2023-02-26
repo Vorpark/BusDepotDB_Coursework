@@ -13,9 +13,9 @@ namespace BusDepotUI
         bool access = false;
         public Main()
         {
-            InitializeComponent();
             db = new BusDepotContext();
-            db.Buses.Load();
+            db.Buses.LoadAsync();
+            InitializeComponent();
         }
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,55 +28,58 @@ namespace BusDepotUI
 
         private void BusesEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (access == true || CheckPassword() == true)
-            {
-                Hide();
-                var catalogBusesEdit = new Catalog<Bus>(db.Buses, db);
-                catalogBusesEdit.ShowDialog();
-                Show();
-            }
+            CatalogEdit(typeof(Bus));
         }
 
         private void DriversEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (access == true || CheckPassword() == true)
-            {
-                Hide();
-                var catalogDriversEdit = new Catalog<Driver>(db.Drivers, db);
-                catalogDriversEdit.ShowDialog();
-                Show();
-            }
+            CatalogEdit(typeof(Driver));
         }
 
         private void RoutesEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (access == true || CheckPassword() == true)
-            {
-                Hide();
-                var catalogRoutesEdit = new Catalog<Route>(db.Routes, db);
-                catalogRoutesEdit.ShowDialog();
-                Show();
-            }
+            CatalogEdit(typeof(Route));
         }
 
         private void BusModelsEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (access == true || CheckPassword() == true)
-            {
-                Hide();
-                var catalogBusModelsEdit = new Catalog<BusModel>(db.BusModels, db);
-                catalogBusModelsEdit.ShowDialog();
-                Show();
-            }
+            CatalogEdit(typeof(BusModel));
         }
 
         private void BusDepotsEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CatalogEdit(typeof(BusDepot));
+        }
+        private void CatalogEdit(Type type)
+        {
             if (access == true || CheckPassword() == true)
             {
                 Hide();
-                var catalogBusDepotsEdit = new Catalog<BusDepot>(db.BusDepots, db);
-                catalogBusDepotsEdit.ShowDialog();
+                if (type == typeof(Bus))
+                {
+                    var catalogBusesEdit = new Catalog<Bus>(db.Buses, db);
+                    catalogBusesEdit.ShowDialog();
+                }
+                else if (type == typeof(Driver))
+                {
+                    var catalogDriversEdit = new Catalog<Driver>(db.Drivers, db);
+                    catalogDriversEdit.ShowDialog();
+                }
+                else if (type == typeof(Route))
+                {
+                    var catalogRoutesEdit = new Catalog<Route>(db.Routes, db);
+                    catalogRoutesEdit.ShowDialog();
+                }
+                else if (type == typeof(BusModel))
+                {
+                    var catalogBusModelsEdit = new Catalog<BusModel>(db.BusModels, db);
+                    catalogBusModelsEdit.ShowDialog();
+                }
+                else if (type == typeof(BusDepot))
+                {
+                    var catalogBusDepotsEdit = new Catalog<BusDepot>(db.BusDepots, db);
+                    catalogBusDepotsEdit.ShowDialog();
+                }
                 Show();
             }
         }

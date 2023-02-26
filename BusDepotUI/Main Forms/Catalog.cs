@@ -35,7 +35,7 @@ namespace BusDepotUI
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             var id = dataGridView.SelectedRows[0].Cells[0].Value;
-            Form form = new BusEdit();
+            Form form = null;
             if (typeof(T) == typeof(Bus))
             {
                 if (set.Find(id) is Bus bus)
