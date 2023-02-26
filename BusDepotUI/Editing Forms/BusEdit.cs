@@ -9,7 +9,7 @@ namespace BusDepotUI.Editing_Forms
     {
         public Bus Bus { get; set; }
         BusDepotContext db;
-        bool editBool = false;
+        string currentNumber;
         public BusEdit()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace BusDepotUI.Editing_Forms
         public BusEdit(Bus bus, BusDepotContext db) : this(db)
         {
             Bus = bus;
-            editBool = true;
+            currentNumber = bus.BusNumber;
             textBox1.Text = bus.BusNumber;
             comboBox1.Text = bus.BusModel.BusName;
             comboBox2.Text = bus.BusDepot.BusDepotAddress;
@@ -69,7 +69,7 @@ namespace BusDepotUI.Editing_Forms
                 }
                 else
                 {
-                    if (editBool == true)
+                    if (currentNumber == textBox1.Text)
                     {
                         bus.BusNumber = textBox1.Text;
                     }

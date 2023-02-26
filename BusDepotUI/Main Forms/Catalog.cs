@@ -35,61 +35,46 @@ namespace BusDepotUI
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             var id = dataGridView.SelectedRows[0].Cells[0].Value;
-
+            Form form = new BusEdit();
             if (typeof(T) == typeof(Bus))
             {
                 if (set.Find(id) is Bus bus)
                 {
-                    var form = new BusEdit(bus, db);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        db.SaveChanges();
-                    }
+                    form = new BusEdit(bus, db);
                 }
             }
             else if (typeof(T) == typeof(Driver))
             {
                 if (set.Find(id) is Driver driver)
                 {
-                    var form = new DriverEdit(driver, db);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        db.SaveChanges();
-                    }
+                    form = new DriverEdit(driver, db);
                 }
             }
             else if (typeof(T) == typeof(BusDepot))
             {
                 if (set.Find(id) is BusDepot busDepot)
                 {
-                    var form = new BusDepotEdit(busDepot, db);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        db.SaveChanges();
-                    }
+                    form = new BusDepotEdit(busDepot, db);
                 }
             }
             else if (typeof(T) == typeof(Route))
             {
                 if (set.Find(id) is Route route)
                 {
-                    var form = new RouteEdit(route, db);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        db.SaveChanges();
-                    }
+                    form = new RouteEdit(route, db);
                 }
             }
             else if (typeof(T) == typeof(BusModel))
             {
                 if (set.Find(id) is BusModel busModel)
                 {
-                    var form = new BusModelEdit(busModel, db);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        db.SaveChanges();
-                    }
+                    form = new BusModelEdit(busModel, db);
                 }
+            }
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.SaveChanges();
             }
         }
 
