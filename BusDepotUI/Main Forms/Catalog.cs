@@ -26,12 +26,30 @@ namespace BusDepotUI
             this.set = set;
             set.Load();
             dataGridView.DataSource = set.Local.ToBindingList();
-
-            //TODO: Реализация нового столбца с ICollection определенного класса
             dataGridView.AutoGenerateColumns = false;
-            dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
         }
-        
+
+        private void UpdateColumn()
+        {
+            dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
+            var column1 = new DataGridViewTextBoxColumn();
+            column1.HeaderText = "Name";
+            column1.ValueType = typeof(string);
+            dataGridView.Columns.Add(column1);
+
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                string cellValue = "";
+                var rowId = dataGridView.Rows[i].Cells[0].Value;
+                var itemsCollection = db.Buses.First(x => x.BusId == (int)rowId).Drivers;
+                foreach (var item in itemsCollection)
+                {
+                    cellValue += $"{item.DriverId}, ";
+                }
+                dataGridView[column1.Index, i].Value = cellValue;
+            }
+        }
+
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             var id = dataGridView.SelectedRows[0].Cells[0].Value;
@@ -75,6 +93,7 @@ namespace BusDepotUI
             if (form.ShowDialog() == DialogResult.OK)
             {
                 db.SaveChanges();
+                UpdateColumn();
             }
         }
 
@@ -120,6 +139,7 @@ namespace BusDepotUI
                     db.BusModels.Remove(busModel);
                     db.SaveChanges();
                 }
+                UpdateColumn();
             }
         }
 
@@ -171,6 +191,12 @@ namespace BusDepotUI
                     db.SaveChanges();
                 }
             }
+            UpdateColumn();
+        }
+
+        private void dataGridView_Enter(object sender, EventArgs e)
+        {
+            UpdateColumn();
         }
     }
 }
