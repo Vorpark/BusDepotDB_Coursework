@@ -104,7 +104,7 @@ namespace BusDepotUI.Editing_Forms
             if (check == true)
             {
                 driver.DriverMiddleName = textBox3.Text;
-                driver.DriverFullName = $"{driver.DriverLastName} {driver.DriverFirstName} {driver.DriverMiddleName}";
+                driver.DriverFullName = $"{driver.DriverLastName} {driver.DriverFirstName.Remove(1)}.{driver.DriverMiddleName.Remove(1)}.";
                 Driver = driver;
                 DialogResult = DialogResult.OK;
                 Close();

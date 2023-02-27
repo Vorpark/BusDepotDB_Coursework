@@ -41,10 +41,10 @@ namespace BusDepotUI
             {
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    string cellValue = "";
-                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+                    string cellValue = null;
+                    var rowItemId = dataGridView.Rows[i].Cells[0].Value;
 
-                    var itemsCollection = db.Buses.First(x => x.BusId == (int)rowId).Drivers;
+                    var itemsCollection = db.Buses.First(x => x.BusId == (int)rowItemId).Drivers;
                     foreach (var item in itemsCollection)
                     {
                         cellValue += $"{item.DriverFullName}, ";
@@ -56,14 +56,15 @@ namespace BusDepotUI
             {
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    string cellValue = "";
-                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+                    string cellValue = null;
+                    var rowItemId = dataGridView.Rows[i].Cells[0].Value;
 
-                    var itemsCollection = db.Drivers.First(x => x.DriverId == (int)rowId).Buses;
+                    var itemsCollection = db.Drivers.First(x => x.DriverId == (int)rowItemId).Buses;
                     foreach (var item in itemsCollection)
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
+                    cellValue.Remove(cellValue.Length - 2);
                     dataGridView[column1.Index, i].Value = cellValue;
                 }
             }
@@ -71,14 +72,15 @@ namespace BusDepotUI
             {
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    string cellValue = "";
-                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+                    string cellValue = null;
+                    var rowItemId = dataGridView.Rows[i].Cells[0].Value;
 
-                    var itemsCollection = db.BusDepots.First(x => x.BusDepotId == (int)rowId).Buses;
+                    var itemsCollection = db.BusDepots.First(x => x.BusDepotId == (int)rowItemId).Buses;
                     foreach (var item in itemsCollection)
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
+                    cellValue.Remove(cellValue.Length - 2);
                     dataGridView[column1.Index, i].Value = cellValue;
                 }
             }
@@ -86,14 +88,15 @@ namespace BusDepotUI
             {
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    string cellValue = "";
-                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+                    string cellValue = null;
+                    var rowItemId = dataGridView.Rows[i].Cells[0].Value;
 
-                    var itemsCollection = db.Routes.First(x => x.RouteId == (int)rowId).Buses;
+                    var itemsCollection = db.Routes.First(x => x.RouteId == (int)rowItemId).Buses;
                     foreach (var item in itemsCollection)
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
+                    cellValue.Remove(cellValue.Length - 2);
                     dataGridView[column1.Index, i].Value = cellValue;
                 }
             }
@@ -101,14 +104,15 @@ namespace BusDepotUI
             {
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    string cellValue = "";
-                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+                    string cellValue = null;
+                    var rowItemId = dataGridView.Rows[i].Cells[0].Value;
 
-                    var itemsCollection = db.BusModels.First(x => x.BusModelId == (int)rowId).Buses;
+                    var itemsCollection = db.BusModels.First(x => x.BusModelId == (int)rowItemId).Buses;
                     foreach (var item in itemsCollection)
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
+                    cellValue.Remove(cellValue.Length - 2);
                     dataGridView[column1.Index, i].Value = cellValue;
                 }
             }
