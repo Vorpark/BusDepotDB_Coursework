@@ -37,16 +37,80 @@ namespace BusDepotUI
             column1.ValueType = typeof(string);
             dataGridView.Columns.Add(column1);
 
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if(typeof(T) == typeof(Bus))
             {
-                string cellValue = "";
-                var rowId = dataGridView.Rows[i].Cells[0].Value;
-                var itemsCollection = db.Buses.First(x => x.BusId == (int)rowId).Drivers;
-                foreach (var item in itemsCollection)
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    cellValue += $"{item.DriverId}, ";
+                    string cellValue = "";
+                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+
+                    var itemsCollection = db.Buses.First(x => x.BusId == (int)rowId).Drivers;
+                    foreach (var item in itemsCollection)
+                    {
+                        cellValue += $"{item.DriverFullName}, ";
+                    }
+                    dataGridView[column1.Index, i].Value = cellValue;
                 }
-                dataGridView[column1.Index, i].Value = cellValue;
+            }
+            else if (typeof(T) == typeof(Driver))
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    string cellValue = "";
+                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+
+                    var itemsCollection = db.Drivers.First(x => x.DriverId == (int)rowId).Buses;
+                    foreach (var item in itemsCollection)
+                    {
+                        cellValue += $"{item.BusNumber}, ";
+                    }
+                    dataGridView[column1.Index, i].Value = cellValue;
+                }
+            }
+            else if (typeof(T) == typeof(BusDepot))
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    string cellValue = "";
+                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+
+                    var itemsCollection = db.BusDepots.First(x => x.BusDepotId == (int)rowId).Buses;
+                    foreach (var item in itemsCollection)
+                    {
+                        cellValue += $"{item.BusNumber}, ";
+                    }
+                    dataGridView[column1.Index, i].Value = cellValue;
+                }
+            }
+            else if (typeof(T) == typeof(Route))
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    string cellValue = "";
+                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+
+                    var itemsCollection = db.Routes.First(x => x.RouteId == (int)rowId).Buses;
+                    foreach (var item in itemsCollection)
+                    {
+                        cellValue += $"{item.BusNumber}, ";
+                    }
+                    dataGridView[column1.Index, i].Value = cellValue;
+                }
+            }
+            else if (typeof(T) == typeof(BusModel))
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    string cellValue = "";
+                    var rowId = dataGridView.Rows[i].Cells[0].Value;
+
+                    var itemsCollection = db.BusModels.First(x => x.BusModelId == (int)rowId).Buses;
+                    foreach (var item in itemsCollection)
+                    {
+                        cellValue += $"{item.BusNumber}, ";
+                    }
+                    dataGridView[column1.Index, i].Value = cellValue;
+                }
             }
         }
 
@@ -93,7 +157,6 @@ namespace BusDepotUI
             if (form.ShowDialog() == DialogResult.OK)
             {
                 db.SaveChanges();
-                UpdateColumn();
             }
         }
 
@@ -139,7 +202,6 @@ namespace BusDepotUI
                     db.BusModels.Remove(busModel);
                     db.SaveChanges();
                 }
-                UpdateColumn();
             }
         }
 
@@ -191,7 +253,6 @@ namespace BusDepotUI
                     db.SaveChanges();
                 }
             }
-            UpdateColumn();
         }
 
         private void dataGridView_Enter(object sender, EventArgs e)
