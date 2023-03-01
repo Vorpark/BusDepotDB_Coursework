@@ -1,8 +1,6 @@
 ﻿using BusDepotBL.Model;
 using System;
 using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BusDepotUI
@@ -13,9 +11,9 @@ namespace BusDepotUI
         bool access = false;
         public Main()
         {
+            InitializeComponent();
             db = new BusDepotContext();
             db.Buses.LoadAsync();
-            InitializeComponent();
         }
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)

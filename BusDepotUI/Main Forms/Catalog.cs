@@ -1,7 +1,6 @@
 ﻿using BusDepotBL.Model;
 using BusDepotUI.Editing_Forms;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,12 +12,6 @@ namespace BusDepotUI
     {
         BusDepotContext db; 
         DbSet<T> set;
-        public Catalog(List<T> set, BusDepotContext db)
-        {
-            InitializeComponent();
-            this.db = db;
-            dataGridView.DataSource = set;
-        }
         public Catalog(DbSet<T> set, BusDepotContext db)
         {
             InitializeComponent();
@@ -32,13 +25,12 @@ namespace BusDepotUI
         private void UpdateColumn()
         {
             dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
-            var column1 = new DataGridViewTextBoxColumn();
-            column1.HeaderText = "Name";
-            column1.ValueType = typeof(string);
-            dataGridView.Columns.Add(column1);
+            var newColumn = new DataGridViewTextBoxColumn();
+            dataGridView.Columns.Add(newColumn);
 
-            if(typeof(T) == typeof(Bus))
+            if (typeof(T) == typeof(Bus))
             {
+                newColumn.HeaderText = "Drivers";
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string cellValue = null;
@@ -49,11 +41,12 @@ namespace BusDepotUI
                     {
                         cellValue += $"{item.DriverFullName}, ";
                     }
-                    dataGridView[column1.Index, i].Value = cellValue;
+                    dataGridView[newColumn.Index, i].Value = cellValue;
                 }
             }
             else if (typeof(T) == typeof(Driver))
             {
+                newColumn.HeaderText = "Buses";
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string cellValue = null;
@@ -64,12 +57,12 @@ namespace BusDepotUI
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
-                    cellValue.Remove(cellValue.Length - 2);
-                    dataGridView[column1.Index, i].Value = cellValue;
+                    dataGridView[newColumn.Index, i].Value = cellValue;
                 }
             }
             else if (typeof(T) == typeof(BusDepot))
             {
+                newColumn.HeaderText = "Buses";
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string cellValue = null;
@@ -80,12 +73,12 @@ namespace BusDepotUI
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
-                    cellValue.Remove(cellValue.Length - 2);
-                    dataGridView[column1.Index, i].Value = cellValue;
+                    dataGridView[newColumn.Index, i].Value = cellValue;
                 }
             }
             else if (typeof(T) == typeof(Route))
             {
+                newColumn.HeaderText = "Buses";
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string cellValue = null;
@@ -96,12 +89,12 @@ namespace BusDepotUI
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
-                    cellValue.Remove(cellValue.Length - 2);
-                    dataGridView[column1.Index, i].Value = cellValue;
+                    dataGridView[newColumn.Index, i].Value = cellValue;
                 }
             }
             else if (typeof(T) == typeof(BusModel))
             {
+                newColumn.HeaderText = "Buses";
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     string cellValue = null;
@@ -112,8 +105,7 @@ namespace BusDepotUI
                     {
                         cellValue += $"{item.BusNumber}, ";
                     }
-                    cellValue.Remove(cellValue.Length - 2);
-                    dataGridView[column1.Index, i].Value = cellValue;
+                    dataGridView[newColumn.Index, i].Value = cellValue;
                 }
             }
         }
@@ -172,40 +164,36 @@ namespace BusDepotUI
                 var id = dataGridView.SelectedRows[0].Cells[0].Value;
                 if (typeof(T) == typeof(Bus))
                 {
-                    Bus bus = db.Buses.FirstOrDefault(x => x.BusId == (int)id);
+                    Bus bus = db.Buses.First(x => x.BusId == (int)id);
                     db.Buses.Attach(bus);
                     db.Buses.Remove(bus);
-                    db.SaveChanges();
                 }
                 else if (typeof(T) == typeof(Driver))
                 {
-                    Driver driver = db.Drivers.FirstOrDefault(x => x.DriverId == (int)id);
+                    Driver driver = db.Drivers.First(x => x.DriverId == (int)id);
                     db.Drivers.Attach(driver);
                     db.Drivers.Remove(driver);
-                    db.SaveChanges();
                 }
                 else if (typeof(T) == typeof(BusDepot))
                 {
-                    BusDepot busDepot = db.BusDepots.FirstOrDefault(x => x.BusDepotId == (int)id);
+                    BusDepot busDepot = db.BusDepots.First(x => x.BusDepotId == (int)id);
                     db.BusDepots.Attach(busDepot);
                     db.BusDepots.Remove(busDepot);
-                    db.SaveChanges();
 
                 }
                 else if (typeof(T) == typeof(Route))
                 {
-                    Route route = db.Routes.FirstOrDefault(x => x.RouteId == (int)id);
+                    Route route = db.Routes.First(x => x.RouteId == (int)id);
                     db.Routes.Attach(route);
                     db.Routes.Remove(route);
-                    db.SaveChanges();
                 }
                 else if (typeof(T) == typeof(BusModel))
                 {
-                    BusModel busModel = db.BusModels.FirstOrDefault(x => x.BusModelId == (int)id);
+                    BusModel busModel = db.BusModels.First(x => x.BusModelId == (int)id);
                     db.BusModels.Attach(busModel);
                     db.BusModels.Remove(busModel);
-                    db.SaveChanges();
                 }
+                db.SaveChanges();
             }
         }
 
@@ -217,7 +205,6 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Buses.Add(form.Bus);
-                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(Driver))
@@ -226,7 +213,6 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Drivers.Add(form.Driver);
-                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(BusDepot))
@@ -235,7 +221,6 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusDepots.Add(form.BusDepot);
-                    db.SaveChanges();
                 }
 
             }
@@ -245,7 +230,6 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Routes.Add(form.Route);
-                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(BusModel))
@@ -254,9 +238,9 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusModels.Add(form.BusModel);
-                    db.SaveChanges();
                 }
             }
+            db.SaveChanges();
         }
 
         private void dataGridView_Enter(object sender, EventArgs e)
