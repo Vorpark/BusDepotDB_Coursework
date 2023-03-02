@@ -37,7 +37,7 @@
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(242, 61);
+            this.button.Location = new System.Drawing.Point(242, 32);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
             this.button.TabIndex = 0;
@@ -71,10 +71,12 @@
             this.AcceptButton = this.button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 114);
+            this.ClientSize = new System.Drawing.Size(381, 80);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(397, 119);
+            this.MinimumSize = new System.Drawing.Size(397, 119);
             this.Name = "RouteEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RouteEdit";

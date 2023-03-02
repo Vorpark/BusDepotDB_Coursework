@@ -39,9 +39,13 @@ namespace BusDepotUI.Editing_Forms
             Bus = bus;
             currentNumber = bus.BusNumber;
             textBox1.Text = bus.BusNumber;
-            comboBox1.Text = bus.BusModel.BusName;
-            comboBox2.Text = bus.BusDepot.BusDepotAddress;
-            comboBox3.Text = bus.Route.RouteNumber.ToString();
+            if (bus.BusModel != null)
+                comboBox1.Text = bus.BusModel.BusName;
+            if (bus.BusDepot != null)  
+                comboBox2.Text = bus.BusDepot.BusDepotAddress;
+            if (bus.Route != null) 
+                comboBox3.Text = bus.Route.RouteNumber.ToString();
+            checkBox1.Checked = bus.BusOnWay;
             foreach (var item in bus.Drivers)
             {
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -127,6 +131,8 @@ namespace BusDepotUI.Editing_Forms
 
             if(check == true)
             {
+                bus.BusOnWay = checkBox1.Checked;
+
                 bus.Drivers.Clear();
                 foreach (var item in checkedListBox1.Items)
                 {

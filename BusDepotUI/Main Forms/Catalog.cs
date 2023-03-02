@@ -247,5 +247,10 @@ namespace BusDepotUI
         {
             UpdateColumn();
         }
+
+        private void dataGridView_Sorted(object sender, EventArgs e)
+        {
+            UpdateColumn();
+        }
     }
 }

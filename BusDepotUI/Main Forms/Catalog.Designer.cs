@@ -50,6 +50,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(825, 427);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.Sorted += new System.EventHandler(this.dataGridView_Sorted);
             this.dataGridView.Enter += new System.EventHandler(this.dataGridView_Enter);
             // 
             // button1

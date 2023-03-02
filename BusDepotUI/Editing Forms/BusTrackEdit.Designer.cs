@@ -37,7 +37,7 @@
             // button
             // 
             this.button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button.Location = new System.Drawing.Point(112, 103);
+            this.button.Location = new System.Drawing.Point(109, 67);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
             this.button.TabIndex = 2;
@@ -57,7 +57,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(108, 64);
+            this.checkBox1.Location = new System.Drawing.Point(112, 38);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 4;
@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Location = new System.Drawing.Point(13, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 5;
@@ -76,11 +76,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 155);
+            this.ClientSize = new System.Drawing.Size(250, 119);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(266, 158);
+            this.MinimumSize = new System.Drawing.Size(266, 158);
             this.Name = "BusTrackEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusTrackEdit";

@@ -68,6 +68,8 @@
             this.Controls.Add(this.Check);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.MaximumSize = new System.Drawing.Size(381, 172);
+            this.MinimumSize = new System.Drawing.Size(381, 172);
             this.Name = "CheckAdminPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckAdminPassword";

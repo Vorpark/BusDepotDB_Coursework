@@ -67,6 +67,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(379, 127);
+            this.MinimumSize = new System.Drawing.Size(379, 127);
             this.Name = "BusModelEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusModelEdit";

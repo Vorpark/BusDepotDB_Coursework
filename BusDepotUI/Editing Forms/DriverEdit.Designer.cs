@@ -147,6 +147,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(389, 225);
+            this.MinimumSize = new System.Drawing.Size(389, 225);
             this.Name = "DriverEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DriverEdit";
