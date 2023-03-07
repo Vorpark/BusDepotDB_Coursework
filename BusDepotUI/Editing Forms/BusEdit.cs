@@ -150,12 +150,8 @@ namespace BusDepotUI.Editing_Forms
 
                 Bus = bus;
                 DialogResult = DialogResult.OK;
-                Close();
             }
-            else
-            {
-                Close();
-            }
+            Close();
         }
     }
 }

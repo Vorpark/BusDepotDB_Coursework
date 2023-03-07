@@ -7,6 +7,7 @@ namespace BusDepotBL.Model
         public int BusId { get; set; }
         public string BusNumber { get; set; }
         public bool BusOnWay { get; set; } = false;
+        public string DriverOnWay { get; set; } = "";
         public virtual BusModel BusModel { get; set; }
         public virtual BusDepot BusDepot { get; set; }
         public virtual Route Route { get; set; }
