@@ -39,8 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelName
@@ -54,7 +52,7 @@
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(353, 360);
+            this.button.Location = new System.Drawing.Point(353, 340);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
             this.button.TabIndex = 1;
@@ -123,7 +121,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(123, 140);
+            this.checkedListBox1.Location = new System.Drawing.Point(123, 120);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(363, 214);
             this.checkedListBox1.TabIndex = 9;
@@ -131,37 +129,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 140);
+            this.label4.Location = new System.Drawing.Point(13, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Водители:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "В пути (Да/Нет):";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(123, 117);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // BusEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 412);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(494, 388);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label3);
@@ -173,8 +151,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button);
             this.Controls.Add(this.labelName);
-            this.MaximumSize = new System.Drawing.Size(510, 451);
-            this.MinimumSize = new System.Drawing.Size(510, 451);
+            this.MaximumSize = new System.Drawing.Size(510, 427);
+            this.MinimumSize = new System.Drawing.Size(510, 427);
             this.Name = "BusEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusEdit";
@@ -196,7 +174,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

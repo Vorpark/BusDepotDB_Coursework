@@ -39,7 +39,7 @@
             // button
             // 
             this.button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button.Location = new System.Drawing.Point(167, 115);
+            this.button.Location = new System.Drawing.Point(167, 85);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(129, 40);
             this.button.TabIndex = 2;
@@ -96,13 +96,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 167);
+            this.ClientSize = new System.Drawing.Size(308, 136);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(324, 175);
+            this.MinimumSize = new System.Drawing.Size(324, 175);
             this.Name = "BusTrackEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusTrackEdit";
