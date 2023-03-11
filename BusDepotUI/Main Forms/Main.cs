@@ -13,7 +13,7 @@ namespace BusDepotUI
         {
             InitializeComponent();
             db = new BusDepotContext();
-            db.Buses.LoadAsync();
+            db.Buses.Load();
         }
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)

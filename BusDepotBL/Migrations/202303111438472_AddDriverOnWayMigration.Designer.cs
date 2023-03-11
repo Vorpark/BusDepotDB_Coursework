@@ -13,12 +13,12 @@ namespace BusDepotBL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202303071859469_AddDriverOnWayMigration"; }
+            get { return "202303111438472_AddDriverOnWayMigration"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

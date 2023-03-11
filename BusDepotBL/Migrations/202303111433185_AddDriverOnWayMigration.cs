@@ -1,7 +1,6 @@
 ﻿namespace BusDepotBL.Migrations
 {
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     
     public partial class AddDriverOnWayMigration : DbMigration

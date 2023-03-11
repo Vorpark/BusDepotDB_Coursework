@@ -53,10 +53,6 @@ namespace BusDepotUI.Editing_Forms
             }
             else
             {
-                if (comboBox1.Text != "")
-                {
-                    MessageBox.Show("Невозможно выбрать водителя без отправления автобуса в путь", "Ошибка!", MessageBoxButtons.OK);
-                }
                 check = false;
             }
 
