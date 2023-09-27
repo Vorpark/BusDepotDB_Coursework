@@ -38,6 +38,13 @@
             this.CoursesTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BusModelsTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BusDepotsTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelActiveBusesCount = new System.Windows.Forms.Label();
+            this.labelAllDriversCount = new System.Windows.Forms.Label();
+            this.labelAllBusesCount = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,11 +129,88 @@
             this.BusDepotsTrackToolStripMenuItem.Text = "Автобусные парковки";
             this.BusDepotsTrackToolStripMenuItem.Click += new System.EventHandler(this.BusDepotsEditToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(11, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Актуальная статистика:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Общее кол-во автобусов:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(12, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(286, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Кол-во задействованных автобусов:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(12, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Кол-во водителей:";
+            // 
+            // labelActiveBusesCount
+            // 
+            this.labelActiveBusesCount.AutoSize = true;
+            this.labelActiveBusesCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelActiveBusesCount.Location = new System.Drawing.Point(304, 116);
+            this.labelActiveBusesCount.Name = "labelActiveBusesCount";
+            this.labelActiveBusesCount.Size = new System.Drawing.Size(18, 20);
+            this.labelActiveBusesCount.TabIndex = 5;
+            this.labelActiveBusesCount.Text = "0";
+            // 
+            // labelAllDriversCount
+            // 
+            this.labelAllDriversCount.AutoSize = true;
+            this.labelAllDriversCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelAllDriversCount.Location = new System.Drawing.Point(304, 139);
+            this.labelAllDriversCount.Name = "labelAllDriversCount";
+            this.labelAllDriversCount.Size = new System.Drawing.Size(18, 20);
+            this.labelAllDriversCount.TabIndex = 6;
+            this.labelAllDriversCount.Text = "0";
+            // 
+            // labelAllBusesCount
+            // 
+            this.labelAllBusesCount.AutoSize = true;
+            this.labelAllBusesCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelAllBusesCount.Location = new System.Drawing.Point(304, 93);
+            this.labelAllBusesCount.Name = "labelAllBusesCount";
+            this.labelAllBusesCount.Size = new System.Drawing.Size(18, 20);
+            this.labelAllBusesCount.TabIndex = 7;
+            this.labelAllBusesCount.Text = "0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 291);
+            this.Controls.Add(this.labelAllBusesCount);
+            this.Controls.Add(this.labelAllDriversCount);
+            this.Controls.Add(this.labelActiveBusesCount);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(403, 330);
@@ -134,6 +218,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusDepot";
+            this.VisibleChanged += new System.EventHandler(this.Main_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -153,6 +238,13 @@
         private System.Windows.Forms.ToolStripMenuItem CoursesTrackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BusModelsTrackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BusDepotsTrackToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelActiveBusesCount;
+        private System.Windows.Forms.Label labelAllDriversCount;
+        private System.Windows.Forms.Label labelAllBusesCount;
     }
 }
 

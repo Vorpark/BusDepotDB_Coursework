@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusDepotBL.Model.Bus">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAAAAAAAAAAAEAEgAAABABgAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Bus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BusDepot" />
+      <Property Name="BusModel" />
+      <Property Name="Route" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Drivers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BusDepotBL.Model.BusDepot">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\BusDepot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Buses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BusDepotBL.Model.BusDepotContext">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAEAAAABAAgAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\BusDepotContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="BusDepots" />
+      <Property Name="Buses" />
+      <Property Name="BusModels" />
+      <Property Name="Drivers" />
+      <Property Name="Routes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BusDepotBL.Model.BusModel">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\BusModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Buses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BusDepotBL.Model.Driver">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAABAMAAAAAAAQAAAAAAAAQgAAAAgAAgA=</HashCode>
+      <FileName>Model\Driver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Buses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BusDepotBL.Model.Route">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <AssociationLine Name="Buses" Type="BusDepotBL.Model.Bus" ManuallyRouted="true">
+      <Path>
+        <Point X="12" Y="8.619" />
+        <Point X="9.958" Y="8.619" Type="JumpStart" />
+        <Point X="9.792" Y="8.619" Type="JumpEnd" />
+        <Point X="9.29" Y="8.619" Type="JumpStart" />
+        <Point X="9.124" Y="8.619" Type="JumpEnd" />
+        <Point X="8.935" Y="8.619" Type="JumpStart" />
+        <Point X="8.768" Y="8.619" Type="JumpEnd" />
+        <Point X="8.258" Y="8.619" />
+        <Point X="8.258" Y="7.242" />
+        <Point X="8.141" Y="7.242" />
+        <Point X="8.141" Y="7.074" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.048" Y="0.446" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\Route.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Buses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

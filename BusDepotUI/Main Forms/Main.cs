@@ -1,6 +1,7 @@
 ﻿using BusDepotBL.Model;
 using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BusDepotUI
@@ -14,6 +15,13 @@ namespace BusDepotUI
             InitializeComponent();
             db = new BusDepotContext();
             db.Buses.Load();
+            UpdateStatistics();
+        }
+        private void UpdateStatistics()
+        {
+            labelAllBusesCount.Text = db.Buses.Count().ToString();
+            labelActiveBusesCount.Text = db.Buses.Where(x => x.BusOnWay == true).Count().ToString();
+            labelAllDriversCount.Text = db.Drivers.Count().ToString();
         }
 
         private void BusesTrackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +102,11 @@ namespace BusDepotUI
                 MessageBox.Show("Пароль введен не верно", "Ошибка!", MessageBoxButtons.OK);
                 return false;
             }
+        }
+
+        private void Main_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateStatistics();
         }
     }
 }
