@@ -205,6 +205,7 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Buses.Add(form.Bus);
+                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(Driver))
@@ -213,6 +214,7 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Drivers.Add(form.Driver);
+                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(BusDepot))
@@ -221,6 +223,7 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusDepots.Add(form.BusDepot);
+                    db.SaveChanges();
                 }
 
             }
@@ -230,6 +233,7 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.Routes.Add(form.Route);
+                    db.SaveChanges();
                 }
             }
             else if (typeof(T) == typeof(BusModel))
@@ -238,9 +242,9 @@ namespace BusDepotUI
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     db.BusModels.Add(form.BusModel);
+                    db.SaveChanges();
                 }
             }
-            db.SaveChanges();
         }
 
         private void dataGridView_Enter(object sender, EventArgs e)

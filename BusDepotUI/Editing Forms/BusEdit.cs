@@ -13,6 +13,7 @@ namespace BusDepotUI.Editing_Forms
         public BusEdit()
         {
             InitializeComponent();
+            DialogResult = DialogResult.No;
         }
         public BusEdit(BusDepotContext db) : this()
         {
@@ -146,8 +147,8 @@ namespace BusDepotUI.Editing_Forms
                 }
                 Bus = bus;
                 DialogResult = DialogResult.OK;
+                Close();
             }
-            Close();
         }
     }
 }
