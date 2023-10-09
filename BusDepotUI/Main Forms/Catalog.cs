@@ -204,6 +204,8 @@ namespace BusDepotUI
                 var form = new BusEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
+                    db.Buses.Attach(form.Bus);
+                    db.Buses.Remove(form.Bus);
                     db.SaveChanges();
                 }
             }
