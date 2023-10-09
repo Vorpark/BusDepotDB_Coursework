@@ -204,7 +204,6 @@ namespace BusDepotUI
                 var form = new BusEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.Buses.Add(form.Bus);
                     db.SaveChanges();
                 }
             }
@@ -213,7 +212,6 @@ namespace BusDepotUI
                 var form = new DriverEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.Drivers.Add(form.Driver);
                     db.SaveChanges();
                 }
             }
@@ -222,7 +220,6 @@ namespace BusDepotUI
                 var form = new BusDepotEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.BusDepots.Add(form.BusDepot);
                     db.SaveChanges();
                 }
 
@@ -232,7 +229,6 @@ namespace BusDepotUI
                 var form = new RouteEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.Routes.Add(form.Route);
                     db.SaveChanges();
                 }
             }
@@ -241,7 +237,6 @@ namespace BusDepotUI
                 var form = new BusModelEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.BusModels.Add(form.BusModel);
                     db.SaveChanges();
                 }
             }
