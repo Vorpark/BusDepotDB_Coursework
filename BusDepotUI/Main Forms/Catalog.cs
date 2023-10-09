@@ -197,15 +197,13 @@ namespace BusDepotUI
             }
         }
 
-        private void ButtonAdd_Click(object sender, EventArgs e)
+        private void ButtonAdd_Click(object sender, EventArgs e) //Баги
         {
             if (typeof(T) == typeof(Bus))
             {
                 var form = new BusEdit(db);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    db.Buses.Attach(form.Bus);
-                    db.Buses.Remove(form.Bus);
                     db.SaveChanges();
                 }
             }
