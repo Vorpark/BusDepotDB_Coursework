@@ -38,6 +38,15 @@ namespace BusDepotUI.Editing_Forms
                 if (routeNumber == null)
                 {
                     route.RouteNumber = number;
+                    if (textBox2.Text != "")
+                    {
+                        route.RouteName = textBox2.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Путь маршрута не может быть пустым", "Ошибка!", MessageBoxButtons.OK);
+                        check = false;
+                    }
                 }
                 else
                 {
@@ -50,7 +59,6 @@ namespace BusDepotUI.Editing_Forms
                 MessageBox.Show("Номер маршрута не может быть пустым", "Ошибка!", MessageBoxButtons.OK);
                 check = false;
             }
-
             if (check == true)
             {
                 Route = route;

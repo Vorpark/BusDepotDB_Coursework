@@ -24,8 +24,8 @@ namespace BusDepotUI.Main_Forms
             {
                 comboBox.Items.Add(item);
             }
-            comboBox.SelectedItem = 0;
-            labelRouteNameOfCurrentRoute.Text = db.Routes.First(x => x.RouteNumber.Equals(comboBox.SelectedItem)).ToString();
+            comboBox.SelectedIndex = 0;
+            //labelRouteNameOfCurrentRoute.Text = db.Routes.First(x => x.RouteNumber.Equals(comboBox.SelectedIndex)).ToString();
         }
 
         private void AcceptChanges(object sender, EventArgs e)
