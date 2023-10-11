@@ -45,6 +45,7 @@
             this.labelActiveBusesCount = new System.Windows.Forms.Label();
             this.labelAllDriversCount = new System.Windows.Forms.Label();
             this.labelAllBusesCount = new System.Windows.Forms.Label();
+            this.отправкаАвтобусовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             // отслеживаниеToolStripMenuItem
             // 
             this.отслеживаниеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.автобусыВПToolStripMenuItem});
+            this.автобусыВПToolStripMenuItem,
+            this.отправкаАвтобусовToolStripMenuItem});
             this.отслеживаниеToolStripMenuItem.Name = "отслеживаниеToolStripMenuItem";
             this.отслеживаниеToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.отслеживаниеToolStripMenuItem.Text = "Отслеживание";
@@ -199,6 +201,13 @@
             this.labelAllBusesCount.TabIndex = 7;
             this.labelAllBusesCount.Text = "0";
             // 
+            // отправкаАвтобусовToolStripMenuItem
+            // 
+            this.отправкаАвтобусовToolStripMenuItem.Name = "отправкаАвтобусовToolStripMenuItem";
+            this.отправкаАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.отправкаАвтобусовToolStripMenuItem.Text = "Отправка автобусов";
+            this.отправкаАвтобусовToolStripMenuItem.Click += new System.EventHandler(this.DispatchOfBusesToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +254,7 @@
         private System.Windows.Forms.Label labelActiveBusesCount;
         private System.Windows.Forms.Label labelAllDriversCount;
         private System.Windows.Forms.Label labelAllBusesCount;
+        private System.Windows.Forms.ToolStripMenuItem отправкаАвтобусовToolStripMenuItem;
     }
 }
 

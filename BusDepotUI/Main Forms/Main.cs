@@ -1,4 +1,5 @@
 ﻿using BusDepotBL.Model;
+using BusDepotUI.Main_Forms;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -107,6 +108,14 @@ namespace BusDepotUI
         private void Main_VisibleChanged(object sender, EventArgs e)
         {
             UpdateStatistics();
+        }
+
+        private void DispatchOfBusesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var dispatchCatalogBusesTrack = new DispatchCatalog(db.Buses, db);
+            dispatchCatalogBusesTrack.ShowDialog();
+            Show();
         }
     }
 }

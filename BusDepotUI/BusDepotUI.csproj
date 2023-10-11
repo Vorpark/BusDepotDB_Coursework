@@ -106,6 +106,12 @@
     <Compile Include="Editing Forms\RouteEdit.Designer.cs">
       <DependentUpon>RouteEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Forms\DispatchCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Forms\DispatchCatalog.Designer.cs">
+      <DependentUpon>DispatchCatalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editing Forms\RouteEdit.resx">
       <DependentUpon>RouteEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Forms\DispatchCatalog.resx">
+      <DependentUpon>DispatchCatalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
