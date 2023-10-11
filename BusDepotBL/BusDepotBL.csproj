@@ -55,6 +55,10 @@
     <Compile Include="Migrations\202303111438472_AddDriverOnWayMigration.designer.cs">
       <DependentUpon>202303111438472_AddDriverOnWayMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310111925151_AddRouteNameMigration.cs" />
+    <Compile Include="Migrations\202310111925151_AddRouteNameMigration.designer.cs">
+      <DependentUpon>202310111925151_AddRouteNameMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Bus.cs" />
     <Compile Include="Model\BusDepot.cs" />
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303111438472_AddDriverOnWayMigration.resx">
       <DependentUpon>202303111438472_AddDriverOnWayMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310111925151_AddRouteNameMigration.resx">
+      <DependentUpon>202310111925151_AddRouteNameMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

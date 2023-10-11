@@ -20,5 +20,10 @@ namespace BusDepotUI.Main_Forms
         {
 
         }
+
+        private void AcceptChanges(object sender, EventArgs e)
+        {
+
+        }
     }
 }
