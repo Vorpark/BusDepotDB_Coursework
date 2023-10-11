@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.acceptChanges = new System.Windows.Forms.Button();
+            this.labelRouteNameOfCurrentRoute = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 33);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(12, 12);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(191, 33);
+            this.comboBox.TabIndex = 0;
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(236, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Маршрут:";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label.Location = new System.Drawing.Point(236, 15);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(103, 25);
+            this.label.TabIndex = 1;
+            this.label.Text = "Маршрут:";
             // 
             // dataGridView1
             // 
@@ -73,15 +74,25 @@
             this.acceptChanges.UseVisualStyleBackColor = true;
             this.acceptChanges.Click += new System.EventHandler(this.AcceptChanges);
             // 
+            // label2
+            // 
+            this.labelRouteNameOfCurrentRoute.AutoSize = true;
+            this.labelRouteNameOfCurrentRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.labelRouteNameOfCurrentRoute.Location = new System.Drawing.Point(345, 15);
+            this.labelRouteNameOfCurrentRoute.Name = "label2";
+            this.labelRouteNameOfCurrentRoute.Size = new System.Drawing.Size(0, 25);
+            this.labelRouteNameOfCurrentRoute.TabIndex = 4;
+            // 
             // DispatchCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 516);
+            this.Controls.Add(this.labelRouteNameOfCurrentRoute);
             this.Controls.Add(this.acceptChanges);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.comboBox);
             this.Name = "DispatchCatalog";
             this.Text = "DispatchCatalog";
             this.Load += new System.EventHandler(this.DispatchCatalog_Load);
@@ -93,9 +104,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button acceptChanges;
+        private System.Windows.Forms.Label labelRouteNameOfCurrentRoute;
     }
 }

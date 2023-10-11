@@ -1,6 +1,7 @@
 ﻿using BusDepotBL.Model;
 using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BusDepotUI.Main_Forms
@@ -18,7 +19,13 @@ namespace BusDepotUI.Main_Forms
 
         private void DispatchCatalog_Load(object sender, EventArgs e)
         {
-
+            var routeNumbers = db.Routes.Select(x => x.RouteNumber);
+            foreach(var item in routeNumbers)
+            {
+                comboBox.Items.Add(item);
+            }
+            comboBox.SelectedItem = 0;
+            labelRouteNameOfCurrentRoute.Text = db.Routes.First(x => x.RouteNumber.Equals(comboBox.SelectedItem)).ToString();
         }
 
         private void AcceptChanges(object sender, EventArgs e)
