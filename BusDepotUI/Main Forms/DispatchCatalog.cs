@@ -1,7 +1,6 @@
 ﻿using BusDepotBL.Model;
 using System;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -66,7 +65,27 @@ namespace BusDepotUI.Main_Forms
         }
         private void AcceptChanges(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < dataGridView.RowCount - 1; i++)
+            {
+                var boolOfCheckBox = (bool)dataGridView[1, i].Value;
+                if (boolOfCheckBox)
+                {
+                    var busName = dataGridView[0, i].Value.ToString();
+                    if (dataGridView[2, i].Value != null)
+                    {
+                        var bus = db.Buses.First(x => x.BusNumber == busName);
+                        bus.BusOnWay = true;
+                        var driverName = dataGridView[2, i].Value.ToString();
+                        bus.DriverOnWay = driverName;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Не выбран водитель для автобуса {busName}");
+                    }
+                }
+            }
+            //db.SaveChanges();
+            MessageBox.Show("Изменения успешны!");
         }
 
         private void comboBox_TextChanged(object sender, EventArgs e)
