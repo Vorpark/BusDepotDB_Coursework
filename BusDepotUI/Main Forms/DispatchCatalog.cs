@@ -1,6 +1,7 @@
 ﻿using BusDepotBL.Model;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -25,12 +26,53 @@ namespace BusDepotUI.Main_Forms
                 comboBox.Items.Add(item);
             }
             comboBox.SelectedIndex = 0;
-            //labelRouteNameOfCurrentRoute.Text = db.Routes.First(x => x.RouteNumber.Equals(comboBox.SelectedIndex)).ToString();
+            UpdateLabelRouteNameOfCurrentRoute();
+            UpdateDataGridViewOfCurrentRoute();
         }
+        private void UpdateLabelRouteNameOfCurrentRoute()
+        {
+            labelRouteNameOfCurrentRoute.Text = db.Routes.First(x => x.RouteNumber.ToString() == comboBox.Text).RouteName;
+        }
+        private void UpdateDataGridViewOfCurrentRoute()
+        {
+            dataGridView.Columns.Clear();
+            dataGridView.Rows.Clear();
+            var i = 0;
+            var newColumn1 = new DataGridViewTextBoxColumn();
+            dataGridView.Columns.Add(newColumn1);
+            newColumn1.HeaderText = "BusNumber";
 
+            var newColumn2 = new DataGridViewCheckBoxColumn();
+            dataGridView.Columns.Add(newColumn2);
+            newColumn2.HeaderText = "BusOnWay";
+
+            var newColumn3 = new DataGridViewComboBoxColumn();
+            dataGridView.Columns.Add(newColumn3);
+            newColumn3.HeaderText = "Drivers";
+
+            var busesOfCurrentRoute = db.Buses.Where(x => x.Route.RouteNumber.ToString() == comboBox.Text).ToList();
+            foreach (var item in busesOfCurrentRoute)
+            {
+                dataGridView.Rows.Add();
+                dataGridView[newColumn1.Index, i].Value = busesOfCurrentRoute.ElementAt(i).BusNumber;
+                dataGridView[newColumn2.Index, i].Value = busesOfCurrentRoute.ElementAt(i).BusOnWay;
+                i++;
+            }
+            var allDrivers = db.Drivers.Select(x => x.DriverFullName).ToList();
+            foreach (var item in allDrivers)
+            {
+                newColumn3.Items.Add(item);
+            }
+        }
         private void AcceptChanges(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox_TextChanged(object sender, EventArgs e)
+        {
+            UpdateLabelRouteNameOfCurrentRoute();
+            UpdateDataGridViewOfCurrentRoute();
         }
     }
 }
