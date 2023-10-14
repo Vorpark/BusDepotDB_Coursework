@@ -3,6 +3,7 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BusDepotUI.Main_Forms
 {
@@ -55,6 +56,7 @@ namespace BusDepotUI.Main_Forms
                 dataGridView.Rows.Add();
                 dataGridView[newColumn1.Index, i].Value = busesOfCurrentRoute.ElementAt(i).BusNumber;
                 dataGridView[newColumn2.Index, i].Value = busesOfCurrentRoute.ElementAt(i).BusOnWay;
+                dataGridView[newColumn3.Index, i].Value = busesOfCurrentRoute.ElementAt(i).DriverOnWay;
                 i++;
             }
             var allDrivers = db.Drivers.Select(x => x.DriverFullName).ToList();
@@ -67,25 +69,46 @@ namespace BusDepotUI.Main_Forms
         {
             for (int i = 0; i < dataGridView.RowCount - 1; i++)
             {
-                var boolOfCheckBox = (bool)dataGridView[1, i].Value;
-                if (boolOfCheckBox)
+                if (dataGridView[0, i].Value != null)
                 {
+                    var boolOfCheckBox = (bool)dataGridView[1, i].Value;
                     var busName = dataGridView[0, i].Value.ToString();
-                    if (dataGridView[2, i].Value != null)
+                    var bus = db.Buses.First(x => x.BusNumber == busName);
+                    if (boolOfCheckBox)
                     {
-                        var bus = db.Buses.First(x => x.BusNumber == busName);
-                        bus.BusOnWay = true;
-                        var driverName = dataGridView[2, i].Value.ToString();
-                        bus.DriverOnWay = driverName;
+                        if (dataGridView[2, i].Value != "")
+                        {
+                            var driverName = dataGridView[2, i].Value.ToString();
+                            var checkDriver = db.Buses.FirstOrDefault(b => b.DriverOnWay.ToString() == driverName);
+                            if (checkDriver == null || bus.DriverOnWay == driverName)
+                            {
+                                bus.BusOnWay = true;
+                                bus.DriverOnWay = driverName;
+                                db.SaveChanges();
+                            }
+                            else
+                            {
+                                bus.BusOnWay = false;
+                                bus.DriverOnWay = "";
+                                db.SaveChanges();
+                                MessageBox.Show($"{driverName} - данный водитель уже находится в пути на другом транспорте", "Ошибка!", MessageBoxButtons.OK);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Не выбран водитель для автобуса {busName}", "Ошибка!", MessageBoxButtons.OK);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show($"Не выбран водитель для автобуса {busName}");
+                        bus.BusOnWay = false;
+                        bus.DriverOnWay = "";
+                        db.SaveChanges();
                     }
                 }
             }
-            //db.SaveChanges();
-            MessageBox.Show("Изменения успешны!");
+            UpdateDataGridViewOfCurrentRoute();
+            MessageBox.Show("Изменения применены!", "Успех!", MessageBoxButtons.OK);
         }
 
         private void comboBox_TextChanged(object sender, EventArgs e)
